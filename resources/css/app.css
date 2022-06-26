@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "primevue/resources/themes/vela-blue/theme.css";
+@import "primevue/resources/primevue.css";
+@import "primeicons/primeicons.css";
