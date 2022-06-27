@@ -1,7 +1,7 @@
-# Webalizer V2.23-08 Incremental Data - 06/26/2022 00:59:21
-2022 6 26 0 59 21
-15420 13615 96 154 21 29 1486276335 5431 153 0 0 0
-1 1 1448 1 26
+# Webalizer V2.23-08 Incremental Data - 06/26/2022 17:39:01
+2022 6 26 17 39 1
+17933 15876 97 155 22 33 1701231693 6345 160 0 0 0
+4 603 1448 1 26
 57 46 2633915 3 28 4 0 0
 4729 4102 349334773 4 1365 9 0 0
 273 227 19689069 14 131 14 0 0
@@ -27,7 +27,7 @@
 18 12 1055153 8 10 7 0 0
 3 1 23459 2 3 2 0 0
 5 3 91815 4 3 3 0 0
-1 0 377 1 1 1 0 0
+2514 2261 214955735 4 915 8 0 0
 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0
@@ -39,18 +39,18 @@
 73 60 4823550 31 0 0
 416 375 32083036 148 0 0
 143 110 11231163 94 0 0
-767 683 63045759 238 0 0
+782 697 64327056 244 0 0
 817 723 55307991 333 0 0
 1207 1064 86085846 378 0 0
-1709 1522 173277452 535 0 0
+1722 1533 174385384 541 0 0
 2047 1840 232738876 572 0 0
 1656 1442 183057923 582 0 0
-1735 1559 238535657 529 0 0
-932 816 79035032 421 0 0
-8 5 267488 7 0 0
-50 41 3144668 21 0 0
-2 1 68243 2 0 0
-30 22 786364 17 0 0
+1975 1781 255723631 611 0 0
+1039 914 87069000 468 0 0
+452 392 38475322 199 0 0
+279 252 16433585 126 0 0
+864 782 81474032 273 0 0
+633 559 55228011 222 0 0
 216 188 6966079 160 0 0
 8 5 511383 7 0 0
 486 410 31134519 215 0 0
@@ -60,7 +60,7 @@
 0
 0
 0
-13615
+15876
 0
 0
 0
@@ -69,7 +69,7 @@
 9
 0
 0
-680
+757
 0
 33
 0
@@ -78,7 +78,7 @@
 0
 0
 0
-1042
+1215
 2
 0
 0
@@ -92,7 +92,7 @@
 0
 0
 0
-38
+40
 0
 0
 0
@@ -102,17 +102,17 @@
 /uploads/1654205952.
 0 5 0 194757 0 0 0 0
 /css/app.css
-0 819 0 15439943 0 0 0 0
+0 1007 0 20454056 0 0 0 0
 /uploads/1654210313.
 0 3 0 120162 0 0 0 0
 /dashboard_adm/personas
-0 58 0 179473 1 0 0 0
+0 60 0 186337 1 0 0 0
 /dashboard_adm/roles/delete
 0 1 0 1808 0 0 0 0
 /archivos/tareas/1655126862_2.9.1-packet-tracer---basic-switch-and-end-device-configuration_es-XL.pka
 0 2 0 216350 0 0 0 0
 /js/resources_js_Pages_Logeado_Admin_Usuarios_vue.js
-0 19 0 145757 0 0 0 0
+0 21 0 160621 0 0 0 0
 /archivos/tareas/21d6e06dbb64439139ccd4dce5b59061.jpg
 1 2 0 22270 0 0 0 0
 /uploads/1654163688.jpg
@@ -130,7 +130,7 @@
 /uploads/1654205856.
 0 24 0 5132960 0 0 0 0
 /js/resources_js_Pages_Logeado_Admin_Cursos_vue.js
-0 183 0 1740633 0 0 0 0
+0 186 0 1771210 0 0 0 0
 /archivos/tareas/1655127982_2.9.1-packet-tracer---basic-switch-and-end-device-configuration_es-XL.pka
 0 4 0 667886 0 0 0 0
 /uploads/1655099744.
@@ -138,7 +138,7 @@
 /uploads/1655099770.
 0 28 0 733100 0 0 0 0
 /js/resources_js_Pages_Logeado_Tareas_Detalles_vue.js
-0 92 0 445697 0 0 0 0
+0 212 0 1288154 0 0 0 0
 /uploads/1655068871.png
 1 2 0 184486 0 0 0 0
 /uploads/1655068522.png
@@ -148,9 +148,9 @@
 /uploads/1654208577.
 0 24 0 823329 0 0 0 0
 /js/manifest.js
-0 818 0 2677109 0 0 0 0
+0 982 0 3279273 0 0 0 0
 /js/resources_js_Pages_Logeado_Home_vue.js
-0 118 0 519351 0 0 0 0
+0 194 0 904376 0 0 0 0
 /uploads/1654210234.
 0 4 0 159378 0 0 0 0
 /js/uppy.js
@@ -164,7 +164,7 @@
 /uploads/1655035320.
 0 23 0 10684109 0 0 0 0
 /cursos/contenido/2
-0 2 0 4999 0 0 0 0
+0 7 0 20152 0 0 0 0
 /uploads/1655452729.png
 1 2 0 241946 0 0 0 0
 /uploads/1654205924.
@@ -180,15 +180,15 @@
 /uploads/1654203577.
 0 3 0 245997 0 0 0 0
 /js/resources_js_Pages_Login_vue.js
-0 29 0 101755 0 0 0 0
+0 33 0 114223 0 0 0 0
 /uploads/1654210726.
 0 3 0 122694 0 0 0 0
 /uploads/1655036209.
 0 121 0 48004380 0 0 0 0
-/uploads/1654300932.
-0 164 0 67485106 0 0 0 0
 /uploads/1654211157.
 0 16 0 661282 0 0 0 0
+/uploads/1654300932.
+0 164 0 67485106 0 0 0 0
 /uploads/1654302025.jpg
 1 2 0 395296 0 0 0 0
 /uploads/1655452816.png
@@ -200,7 +200,7 @@
 /uploads/1655068605.jpg
 1 2 0 43106 0 0 0 0
 /uploads/1655452883.
-0 11 0 349179 0 0 0 0
+0 87 0 2759063 0 0 0 0
 /uploads/1655035733.png
 1 2 0 184486 0 0 0 0
 /uploads/1654211007.
@@ -214,9 +214,9 @@
 /js/primevue.js
 0 237 0 28332098 0 0 0 0
 /dashboard_adm/cursos
-0 836 0 10529562 8 3 0 0
+0 839 0 10552303 8 3 0 0
 /curso/1
-0 134 0 1779326 3 0 0 0
+0 141 0 1831940 3 0 0 0
 /uploads/1654300899.jpg
 1 2 0 345227 0 0 0 0
 /uploads/1654209685.
@@ -226,13 +226,13 @@
 /uploads/1655035750.png
 1 2 0 184486 0 0 0 0
 /favicon.ico
-0 975 0 307912 0 0 0 0
+0 1173 0 373238 0 0 0 0
 /uploads/1655036144.png
 1 3 0 2883697 0 0 0 0
 /js/103.js
 0 1 0 3699 0 0 0 0
 /js/app.js
-0 820 0 65864780 0 0 0 0
+0 983 0 66394029 0 0 0 0
 /uploads/1655069049.png
 1 2 0 184486 0 0 0 0
 /js/vue.js
@@ -240,7 +240,7 @@
 /js/459.js
 0 1 0 3409 0 0 0 0
 /curso/tarea/1
-0 25 0 124917 1 0 0 0
+0 187 0 3048029 2 0 0 0
 /uploads/1655036147.
 0 3 0 2360514 0 0 0 0
 /js/inertiajs.js
@@ -252,23 +252,23 @@
 /uploads/1654210880.
 0 4 0 164238 0 0 0 0
 /inicio
-0 276 0 3150148 5 2 0 0
+0 384 0 5007842 5 2 0 0
 /uploads/1654289397.png
 1 3 0 3355363 0 0 0 0
 /images/vendor/primevue/resources/color.png
 1 2 0 31732 0 0 0 0
 /archivos/tareas/1655128056_Estructura para analisis de Costos, Gastos e Inversiones - EJEMPLO 01 - PEP - SIS - II.21 (1).xlsx
-0 6 0 3343352 0 0 0 0
+0 7 0 5146371 0 0 0 0
 /uploads/1654204709.
 0 25 0 16938991 0 0 0 0
 /uploads/1655127883.png
 1 2 0 184486 0 0 0 0
+/js/vendor.js
+0 757 0 324211261 0 0 0 0
 /uploads/1654210433.
 0 5 0 201217 0 0 0 0
-/js/vendor.js
-0 579 0 245636081 0 0 0 0
 /archivos/tareas/1655133597_Saul goodman 3d.mp3
-0 6 0 1509800 0 0 0 0
+0 7 0 1760639 0 0 0 0
 /uploads/1655077405.
 0 44 0 1187898 0 0 0 0
 /uploads/1654152296.jpg
@@ -292,29 +292,29 @@
 /uploads/1655035587.jpg
 1 1 0 566966 0 0 0 0
 /curso/tarea/2
-0 89 0 1703872 1 0 0 0
+0 96 0 1824635 1 0 0 0
 /_debugbar/assets/javascript
-0 803 0 295401595 1 6 0 0
+0 961 0 353505964 2 7 0 0
 /uploads/1655035800.png
 1 2 0 678968 0 0 0 0
 /uploads/1654302049.
 0 281 0 119565513 0 0 0 0
 /fonts/vendor/primeicons/primeicons.ttf
-0 776 0 51856091 0 0 0 0
+0 911 0 60915292 0 0 0 0
 /uploads/1655035989.jpg
 1 2 0 43106 0 0 0 0
+/js/resources_js_Pages_Logeado_Admin_Roles_vue.js
+0 14 0 82605 0 0 0 0
 /uploads/1653956405.jpg
 1 9 0 556498 0 0 0 0
-/js/resources_js_Pages_Logeado_Admin_Roles_vue.js
-0 12 0 71287 0 0 0 0
 /js/854.js
 0 1 0 4753 0 0 0 0
 /dashboard_adm/roles/update
 0 4 0 5644 0 0 0 0
 /js/resources_js_Pages_Logeado_Contenido_vue.js
-0 134 0 763665 0 0 0 0
+0 161 0 956228 0 0 0 0
 /_debugbar/open
-0 950 0 32694790 0 38 0 0
+0 1105 0 38399756 0 41 0 0
 /uploads/1654205937.
 0 3 0 116667 0 0 0 0
 /images/vendor/primevue/resources/hue.png
@@ -340,17 +340,19 @@
 /uploads/1654211674.
 0 3 0 124370 0 0 0 0
 /_debugbar/assets/stylesheets
-0 802 0 103453522 5 3 0 0
+0 960 0 123823435 5 3 0 0
 /
-0 126 0 2940503 119 16 0 0
+0 133 0 3097790 124 18 0 0
+/fonts/vendor/primeicons/primeicons.woff
+0 1 0 67124 0 0 0 0
 /uploads/1655099727.jpg
 1 2 0 1134462 0 0 0 0
 /uploads/1654204737.jpg
 1 2 0 159180 0 0 0 0
-/dashboard_adm/roles
-0 32 0 103354 1 0 0 0
 /uploads/1654205840.
 0 4 0 153358 0 0 0 0
+/dashboard_adm/roles
+0 34 0 108206 1 0 0 0
 /js/601.js
 0 5 0 12455 0 0 0 0
 /uploads/1655099732.
@@ -360,15 +362,15 @@
 /uploads/1654300927.jpg
 1 2 0 345227 0 0 0 0
 /curso/2
-0 61 0 1117954 1 0 0 0
+0 67 0 1168463 1 0 0 0
 /cursos/contenido/1
-0 175 0 2526936 2 0 0 0
+0 225 0 2984961 2 0 0 0
 /uploads/1654209696.
 0 11 0 7463044 0 0 0 0
 /dashboard_adm/cursos/update
 0 1 0 6114 0 0 0 0
 /js/resources_js_Pages_Logeado_Metas_vue.js
-0 149 0 783793 0 0 0 0
+0 156 0 827928 0 0 0 0
 /uploads/1655079630.
 0 38 0 5524594 0 0 0 0
 /uploads/1655068670.png
@@ -382,7 +384,7 @@
 /uploads/1655034884.png
 1 2 0 69430 0 0 0 0
 /robots.txt
-0 10 0 54509 0 0 0 0
+0 12 0 55135 0 0 0 0
 /uploads/1654210283.
 0 26 0 5152180 0 0 0 0
 /uploads/1654210352.
@@ -390,7 +392,7 @@
 /uploads/1654210635.
 0 4 0 162382 0 0 0 0
 /uploads/1655127886.
-0 28 0 3488346 0 0 0 0
+0 107 0 14965366 0 0 0 0
 /uploads/1655036186.
 0 3 0 612384 0 0 0 0
 /js/553.js
@@ -398,13 +400,13 @@
 /uploads/1655099655.png
 1 2 0 148347 0 0 0 0
 /js/resources_js_Pages_Logeado_Admin_Personas_vue.js
-0 15 0 112174 0 0 0 0
+0 17 0 127602 0 0 0 0
 /dashboard_adm/usuarios/create
 0 9 0 16245 0 0 0 0
 /uploads/1654300881.jpg
 1 2 0 345227 0 0 0 0
 /dashboard_adm/usuarios
-0 62 0 314660 0 0 0 0
+0 64 0 327530 0 0 0 0
 /uploads/1655452879.png
 1 2 0 98608 0 0 0 0
 # End Of Table - urls
@@ -505,6 +507,9 @@
 66.249.66.209
 0 3 1 23778 2 1655751086 0 0
 /
+18.212.221.255
+0 2 1 22592 1 1656236260 0 0
+/
 66.249.66.131
 0 1 0 433 1 1655751087 0 0
 /
@@ -526,12 +531,12 @@
 45.129.18.117
 0 1 1 22711 1 1655272712 0 0
 /
-179.59.140.89
-0 73 62 2553652 1 1655452868 0 0
-/dashboard_adm/cursos
 177.222.110.183
 0 41 39 5562198 1 1655192216 0 0
 /_debugbar/open
+179.59.140.89
+0 73 62 2553652 1 1655452868 0 0
+/dashboard_adm/cursos
 66.249.73.129
 0 3 3 163932 1 1656024887 0 0
 /_debugbar/assets/stylesheets
@@ -566,7 +571,7 @@
 0 1 0 433 1 1655698158 0 0
 /
 82.145.215.206
-0 20 11 885440 11 1655860318 0 0
+0 22 12 978860 12 1656234973 0 0
 /
 66.249.77.100
 0 2 2 11752 1 1655318365 0 0
@@ -629,8 +634,8 @@
 0 1 0 377 1 1655602002 0 0
 /
 200.105.200.101
-0 14564 12934 1447595960 47 1655923599 0 0
-/_debugbar/open
+0 17073 15193 1662435306 52 1656265141 0 0
+/inicio
 198.235.24.152
 0 1 1 62585 1 1655187819 0 0
 /
@@ -640,12 +645,12 @@
 35.237.4.214
 0 2 1 63130 1 1654288984 0 0
 /
-64.225.57.217
-0 1 0 5658 1 1654447911 0 0
-/
 66.249.73.159
 0 6 6 832484 1 1656024888 0 0
 /_debugbar/assets/javascript
+64.225.57.217
+0 1 0 5658 1 1654447911 0 0
+/
 205.210.31.135
 0 2 1 63318 1 1655168184 0 0
 /
@@ -661,11 +666,11 @@
 66.249.66.151
 0 3 3 161989 1 1655751044 0 0
 /_debugbar/assets/stylesheets
-198.235.24.22
-0 1 0 377 1 1655757104 0 0
-/
 66.249.66.71
 0 2 2 54477 1 1655751182 0 0
+/
+198.235.24.22
+0 1 0 377 1 1655757104 0 0
 /
 93.158.91.189
 0 1 0 416 0 0 0 0
@@ -699,57 +704,70 @@
 /
 # End Of Table - sites (monthly)
 # -sites- (daily)
+18.212.221.255
+0 2 1 22592 1 1656236260 0 0
+/
+82.145.215.206
+0 2 1 93420 1 1656234973 0 0
+/
 205.210.31.15
 0 1 0 377 1 1656205161 0 0
 /
+200.105.200.101
+0 2509 2259 214839346 5 1656265141 0 0
+/inicio
 # End Of Table - sites (daily)
 # -referrers- 
+https://superlms.tk/www.googl.com
+0 3
 https://superlms.tk/dashboard_adm/usuarios
-0 179
+0 186
 https://superlms.tk/inicio
-0 1568
+0 2364
 http://superlms.tk/ads.txt
 0 3
 - (Direct Request)
-0 2064
+0 2452
 http://200.105.200.98:80/
 0 2
 https://superlms.tk/cursos/contenido/1
-0 1056
+0 1286
 http://superlms.tk/
 0 3
 http://superlms.tk/humans.txt
 0 3
 https://superlms.tk/cursos/contenido/2
-0 6
+0 18
 https://superlms.tk/curso/1
-0 729
+0 760
 https://superlms.tk/dashboard_adm/personas
-0 165
+0 172
 http://superlms.tk/robots.txt
 0 3
 https://superlms.tk/curso/tarea/1
-0 44
+0 820
 https://superlms.tk/dashboard_adm/cursos
-0 7457
+0 7473
 https://superlms.tk/
-0 491
+0 539
 https://superlms.tk/curso/tarea/2
-0 667
+0 711
 https://superlms.tk/css/app.css
-0 449
+0 573
 https://superlms.tk/curso/2
-0 434
+0 458
 https://superlms.tk/archivos/tareas/1655133597_Saul goodman 3d.mp3
 0 3
 http://superlms.tk
 0 4
 https://superlms.tk/dashboard_adm/roles
-0 90
+0 97
 # End Of Table - referrers
 # -agents- 
 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.115 Safari/537.36
 0 9424
+Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.17 Safari/537.36
+0 2
 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
 0 24
 Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0; +info@netcraft.com)
@@ -766,6 +784,8 @@ Mozilla/5.0 (Linux; Android 11; Redmi Note 9S) AppleWebKit/537.36 (KHTML, like G
 0 117
 Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)
 0 11
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.136 Safari/537.36
+0 2433
 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.61 Safari/537.36
 0 5348
 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.99 Safari/537.36
@@ -773,15 +793,17 @@ Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)
 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36
 0 56
 Go-http-client/1.1
-0 9
+0 10
 Mozilla/5.0 (iPad; CPU OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.77 Mobile/15E148 Safar
 0 1
 Googlebot-Image/1.0
 0 2
 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36
-0 126
+0 150
 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
 0 2
+Mozilla/5.0 (Linux; Android 7.0; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4695.0 Mobile Safari/537.36 C
+0 26
 Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E14
 0 54
 Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.115 Mobile
@@ -801,11 +823,13 @@ Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0
 python-requests/2.27.1
 0 2
 Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Sa
-0 11
+0 12
 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36
 0 73
 Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36
 0 9
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4695.0 Safari/537.36 Chrom
+0 26
 # End Of Table - agents
 # -search strings- 
 # End Of Table - search strings

@@ -15,7 +15,7 @@ class Home extends Controller
     public function index()
     {
         $usuario = Auth::user()
-            ->load('rol', 'persona', 'cursos.plantilla', 'cursos.foto', 'cursos.usuarios.persona');
+            ->load('rol', 'persona', 'cursos.plantilla', 'cursos.foto', 'cursos.usuarios.persona', 'cursos.EnlacesPlataformas', 'cursos.usuarios.rol');
 
         /*
         Método trucho que no carga relaciones de relaciones

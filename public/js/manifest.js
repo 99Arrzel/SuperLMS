@@ -107,7 +107,7 @@
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Logeado_Admin_Asignar_Cursos_vue":1,"resources_js_Pages_Logeado_Admin_Cursos_vue":1,"resources_js_Pages_Logeado_Admin_Personas_vue":1,"resources_js_Pages_Logeado_Admin_Roles_vue":1,"resources_js_Pages_Logeado_Admin_Usuarios_vue":1,"resources_js_Pages_Logeado_Contenido_vue":1,"resources_js_Pages_Logeado_Home_vue":1,"resources_js_Pages_Logeado_Metas_vue":1,"resources_js_Pages_Logeado_Navbar_vue":1,"resources_js_Pages_Logeado_Tareas_Detalles_vue":1,"resources_js_Pages_Login_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Logeado_Admin_Asignar_Cursos_vue":1,"resources_js_Pages_Logeado_Admin_Cursos_vue":1,"resources_js_Pages_Logeado_Admin_Personas_vue":1,"resources_js_Pages_Logeado_Admin_Roles_vue":1,"resources_js_Pages_Logeado_Admin_Usuarios_vue":1,"resources_js_Pages_Logeado_Contenido_vue":1,"resources_js_Pages_Logeado_Contenido_Foro_vue":1,"resources_js_Pages_Logeado_Home_vue":1,"resources_js_Pages_Logeado_Metas_vue":1,"resources_js_Pages_Logeado_Navbar_vue":1,"resources_js_Pages_Logeado_Tareas_Detalles_vue":1,"resources_js_Pages_Login_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

@@ -269,6 +269,7 @@ export default {
         const verMeta = (id) => {
             Inertia.visit(route("contenido", id));
         };
+
         return {
             verMeta,
             deleteMeta,

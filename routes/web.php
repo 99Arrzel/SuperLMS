@@ -47,13 +47,19 @@ Route::middleware('isLoggedIn')->group(function () {
     Route::post('/curso/tarea/editar', [Contenido::class, 'update_t'])->name('editar_tarea');
     Route::post('/curso/tarea/eliminar', [Contenido::class, 'delete_t'])->name('eliminar_tarea');
     Route::get('/curso/tarea/{id_tarea}', [Contenido::class, 'detalles_t'])->name('detalles_tarea');
+    Route::post('/curso/tarea/editar_nota', [Contenido::class, 'editar_nota'])->name('editar_nota');
+    Route::post('/curso/tarea/comentario', [Contenido::class, 'comentario'])->name('enviar_comentario');
     /* Foros */
+    Route::get('/curso/foro/{id_foro}', [Contenido::class, 'index_f'])->name('detalles_foro');
     Route::post('/curso/foro/crear', [Contenido::class, 'create_f'])->name('agregar_foro');
+    Route::post('/curso/foro/crear_participacion', [Contenido::class, 'create_fp'])->name('agregar_foro_participacion');
     Route::post('/curso/foro/editar', [Contenido::class, 'update_f'])->name('editar_foro');
     Route::post('/curso/foro/eliminar', [Contenido::class, 'delete_f'])->name('eliminar_foro');
     /* Entregas */
-
     Route::post('/curso/entrega/entregar_tarea', [Contenido::class, 'subir_tarea'])->name('entregar_tarea');
+    /* Enlaces */
+    Route::post('/curso/enlace/crear', [Contenido::class, 'create_e'])->name('enlace.crear');
+    Route::post('/curso/enlace/eliminar', [Contenido::class, 'eliminar_e'])->name('enlace.eliminar');
 
     /* Admin */
     Route::middleware('isAdmin')->group(function () {

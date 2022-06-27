@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Logeado;
 use App\Http\Controllers\Controller;
 use App\Models\Archivos;
 use App\Models\Cursos;
+use App\Models\EnlacesPlataformas;
 use App\Models\Entregas;
 use App\Models\Foros;
 use App\Models\Metas;
@@ -18,6 +19,21 @@ use Inertia\Inertia;
 
 class Contenido extends Controller
 {
+    /* Detalles del foro */
+    public function index_f($id_foro)
+    {
+        $foro = Foros::findOrFail($id_foro);
+        if (!$foro) {
+            return redirect()->route('home');
+        }
+        $foro->load('plantilla', 'metas.plantilla', 'entregas.usuario.persona')->first();
+        return Inertia::render('Logeado/Contenido/Foro', [
+            'usuario' => fn () => Auth::user()->load('rol', 'persona'),
+            'foro' => fn () => $foro,
+        ]);
+    }
+
+    /* Index de la meta */
     public function index($id_meta)
     {
         $meta = Metas::findOrFail($id_meta);
@@ -32,6 +48,30 @@ class Contenido extends Controller
             ]
         );
     }
+    public function create_fp(Request $request)
+    {
+        $request->validate([
+            'id_foro' => 'required|exists:foros,id_foro',
+            'titulo' => 'required|string|min:3',
+            'descripcion' => 'required|string|min:3',
+        ]);
+        /* no */
+        DB::beginTransaction();
+        try {
+
+            $entrega = Entregas::create([
+                'comentario' => $request->titulo,
+                'descripcion' => $request->descripcion,
+                'id_usuario' => Auth::user()->id_usuario,
+            ]);
+            Foros::findOrFail($request->id_foro)->entregas()->attach($entrega->id_entrega); //Asociar la entrega a la tarea
+            DB::commit();
+            return back()->with('success', 'Foro entregado correctamente');
+        } catch (\Exception $e) {
+            return back()->withErrors(['Error al crear participación ' . $e->getMessage()]);
+        }
+        /* no */
+    }
     public function create_f(Request $request)
     {
         $request->validate([
@@ -39,7 +79,7 @@ class Contenido extends Controller
             'nombre' => 'required|string|min:3',
             'descripcion' => 'required|string|min:3',
             'fecha_inicio' => 'required|date',
-            'fecha_fin' => 'required|date',
+            'fecha_fin' => 'required|date|after:fecha_inicio',
         ]);
         //Creamos una nueva plantilla
         $plantilla = Plantillas::create([
@@ -60,7 +100,7 @@ class Contenido extends Controller
             'nombre' => 'required|string|min:3',
             'descripcion' => 'required|string|min:3',
             'fecha_inicio' => 'required|date',
-            'fecha_fin' => 'required|date',
+            'fecha_fin' => 'required|date|after:fecha_inicio',
         ]);
         //Cambiamos el nombre y la descripcion de la plantilla
         Foros::findOrFail($request->id_foro)->plantilla->update([
@@ -91,7 +131,7 @@ class Contenido extends Controller
             'nombre' => 'required|string|min:3',
             'descripcion' => 'required|string|min:3',
             'fecha_inicio' => 'required|date',
-            'fecha_fin' => 'required|date',
+            'fecha_fin' => 'required|date|after:fecha_inicio',
         ]);
         //Creamos una nueva plantilla
         $plantilla = Plantillas::create([
@@ -113,7 +153,7 @@ class Contenido extends Controller
             'nombre' => 'required|string|min:3',
             'descripcion' => 'required|string|min:3',
             'fecha_inicio' => 'required|date',
-            'fecha_fin' => 'required|date',
+            'fecha_fin' => 'required|date|after:fecha_inicio',
         ]);
         //Cambiamos el nombre y la descripcion de la plantilla
         Tareas::findOrFail($request->id_tarea)->plantilla->update([
@@ -136,10 +176,12 @@ class Contenido extends Controller
         //Borramos la plantilla
         return back()->with('success', 'Tarea eliminada correctamente');
     }
+    /* Esto es la dirección de detalles, aqui se agrega o edita notas */
     public function detalles_t($id_tarea)
     {
         $tarea = Tareas::findOrFail($id_tarea);
         if (!$tarea) {
+            /* Si no existe dicha tarea */
             return redirect()->route('home');
         }
         return Inertia::render(
@@ -148,9 +190,34 @@ class Contenido extends Controller
                 'usuario' => fn () => Auth::user()->load(['rol', 'persona', 'entregas.tarea' => function ($query) use ($id_tarea) {
                     $query->where('tareas.id_tarea', $id_tarea);
                 }, 'entregas.archivos']),
-                'tarea' => fn () => $tarea->load(['plantilla.archivos']),
+                'tarea' => fn () => $tarea->load(['plantilla.archivos', 'entregas.usuario.persona', 'entregas.archivos']),
             ]
         );
+    }
+    /* Modificar nota */
+    public function editar_nota(Request $request)
+    {
+        $request->validate([
+            'id_entrega' => 'required|exists:entregas,id_entrega',
+            'nota' => 'required',
+        ]);
+        $entrega = Entregas::findOrFail($request->id_entrega);
+        $entrega->update([
+            'nota' => $request->nota,
+        ]);
+        return back()->with('success', 'Nota actualizada correctamente');
+    }
+    public function comentario(Request $request)
+    {
+        $request->validate([
+            'id_entrega' => 'required|exists:entregas,id_entrega',
+            'comentario' => 'nullable',
+        ]);
+        $entrega = Entregas::findOrFail($request->id_entrega);
+        $entrega->update([
+            'comentario' => $request->nota,
+        ]);
+        return back()->with('success', 'Comentario actualizado correctamente');
     }
     /* Y este lo carga el docente */
     public function archivos_profe(Request $request)
@@ -237,5 +304,30 @@ class Contenido extends Controller
         unlink(public_path() . '/archivos/tareas/', $archivo->nombre);
         $archivo->delete();
         return back()->with('success', 'Archivo eliminado correctamente');
+    }
+    /* Crear enlace */
+    public function create_e(Request $request)
+    {
+        $request->validate([
+            'id_curso' => 'required|exists:cursos,id_curso',
+            'nombre' => 'required',
+            'url' => 'required',
+        ]);
+        EnlacesPlataformas::create([
+            'nombre' => $request->nombre,
+            'url' => $request->url,
+            'id_curso' => $request->id_curso,
+        ]);
+        return back()->with('success', 'Enlace creado correctamente');
+    }
+    /* Eliminar enlace */
+    public function eliminar_e(Request $request)
+    {
+        $request->validate([
+            'id_enlace_plataforma' => 'required|exists:enlaces-plataformas,id_enlace_plataforma',
+        ]);
+        $enlace = EnlacesPlataformas::findOrFail($request->id_enlace_plataforma);
+        $enlace->delete();
+        return back()->with('success', 'Enlace eliminado correctamente');
     }
 }

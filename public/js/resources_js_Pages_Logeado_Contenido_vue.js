@@ -22,9 +22,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var notiflix__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! notiflix */ "./node_modules/notiflix/dist/notiflix-aio-3.2.5.min.js");
 /* harmony import */ var notiflix__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(notiflix__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! dayjs */ "./node_modules/dayjs/dayjs.min.js");
-/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var primevue_card__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! primevue/card */ "./node_modules/primevue/card/card.esm.js");
+/* harmony import */ var primevue_card__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! primevue/card */ "./node_modules/primevue/card/card.esm.js");
+/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! dayjs */ "./node_modules/dayjs/dayjs.min.js");
+/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var dayjs_plugin_customParseFormat__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! dayjs/plugin/customParseFormat */ "./node_modules/dayjs/plugin/customParseFormat.js");
+/* harmony import */ var dayjs_plugin_customParseFormat__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(dayjs_plugin_customParseFormat__WEBPACK_IMPORTED_MODULE_12__);
 
 
 
@@ -37,6 +39,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+dayjs__WEBPACK_IMPORTED_MODULE_11___default().extend((dayjs_plugin_customParseFormat__WEBPACK_IMPORTED_MODULE_12___default()));
 notiflix__WEBPACK_IMPORTED_MODULE_8__.Confirm.init({
   titleColor: "#FF0000",
   okButtonBackground: "#FF0000",
@@ -44,7 +48,7 @@ notiflix__WEBPACK_IMPORTED_MODULE_8__.Confirm.init({
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    Card: primevue_card__WEBPACK_IMPORTED_MODULE_11__["default"],
+    Card: primevue_card__WEBPACK_IMPORTED_MODULE_10__["default"],
     Calendar: primevue_calendar__WEBPACK_IMPORTED_MODULE_7__["default"],
     Dialog: primevue_dialog__WEBPACK_IMPORTED_MODULE_6__["default"],
     InputText: primevue_inputtext__WEBPACK_IMPORTED_MODULE_5__["default"],
@@ -247,7 +251,18 @@ notiflix__WEBPACK_IMPORTED_MODULE_8__.Confirm.init({
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_9__.Inertia.visit(route("detalles_tarea", id));
     };
 
+    var evaluarFecha = function evaluarFecha(fecha) {
+      var n_fecha = dayjs__WEBPACK_IMPORTED_MODULE_11___default()(fecha, ["DD/MM/YYYY"]);
+      return dayjs__WEBPACK_IMPORTED_MODULE_11___default()().diff(n_fecha) < 0;
+    };
+
+    var verForo = function verForo(id) {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_9__.Inertia.visit(route("detalles_foro", id));
+    };
+
     return {
+      verForo: verForo,
+      evaluarFecha: evaluarFecha,
       verTarea: verTarea,
       eliminar_foro: eliminar_foro,
       eliminar_tarea: eliminar_tarea,
@@ -382,7 +397,7 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Fecha de fin", -1
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Fecha de fin (Hasta las 00)", -1
 /* HOISTED */
 );
 
@@ -708,12 +723,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }),
       footer: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
         return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-          "class": "w-full bg-green-500 rounded-lg p-2",
+          "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([$setup.evaluarFecha(tarea.plantilla.fecha_fin) ? 'bg-green-500' : 'bg-yellow-500', "w-full rounded-lg p-2"]),
           onClick: function onClick($event) {
             return $setup.verTarea(tarea.id_tarea);
           }
-        }, " Ver detalles de la tarea ", 8
-        /* PROPS */
+        }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.evaluarFecha(tarea.plantilla.fecha_fin) ? 'Ver detalles' : 'Esta tarea ya expiró'), 11
+        /* TEXT, CLASS, PROPS */
         , _hoisted_23)];
       }),
       _: 2
@@ -759,12 +774,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }),
       footer: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
         return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-          "class": "w-full bg-green-500 rounded-lg p-2",
+          "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([$setup.evaluarFecha(foro.plantilla.fecha_fin) ? 'bg-green-500' : 'bg-yellow-500', "w-full rounded-lg p-2"]),
           onClick: function onClick($event) {
-            return _ctx.verMeta(foro.id_foro);
+            return $setup.verForo(foro.id_foro);
           }
-        }, " Ver detalles del foro ", 8
-        /* PROPS */
+        }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.evaluarFecha(foro.plantilla.fecha_fin) ? 'Ver detalles' : 'Esta foro ya expiró'), 11
+        /* TEXT, CLASS, PROPS */
         , _hoisted_36)];
       }),
       _: 2
@@ -839,30 +854,6 @@ var _hoisted_10 = {
 };
 
 var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "text-gray-700 hover:text-red-400"
-}, "Enlaces", -1
-/* HOISTED */
-);
-
-var _hoisted_12 = {
-  "class": "md:p-4 py-2 block"
-};
-
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "text-gray-700 hover:text-red-400"
-}, "Aulas", -1
-/* HOISTED */
-);
-
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, null, -1
-/* HOISTED */
-);
-
-var _hoisted_15 = {
-  "class": "md:p-4 py-2 block"
-};
-
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   "class": "text-red-700 hover:text-red-400"
 }, "Cerrar sesión", -1
 /* HOISTED */
@@ -915,38 +906,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["model"])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
+  , ["model"])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li>\n                        <a class=\"md:p-4 py-2 block\"\n                            ><Button\n                                class=\"p-button-md p-button-text p-button-secondary\"\n                                @click=\"redirectTo('enlaces')\"\n                            >\n                                <a class=\"text-gray-700 hover:text-red-400\"\n                                    >Enlaces</a\n                                >\n                            </Button></a\n                        >\n                    </li>\n                    <li>\n                        <a class=\"md:p-4 py-2 block\"\n                            ><Button\n                                class=\"p-button-md p-button-text p-button-secondary\"\n                                @click=\"redirectTo('aulas')\"\n                            >\n                                <a class=\"text-gray-700 hover:text-red-400\"\n                                    >Aulas</a\n                                >\n                            </Button></a\n                        >\n                    </li>\n                    <li></li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
     "class": "p-button-md p-button-text p-button-secondary",
     onClick: _cache[3] || (_cache[3] = function ($event) {
-      return $setup.redirectTo('enlaces');
-    })
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_11];
-    }),
-    _: 1
-    /* STABLE */
-
-  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
-    "class": "p-button-md p-button-text p-button-secondary",
-    onClick: _cache[4] || (_cache[4] = function ($event) {
-      return $setup.redirectTo('aulas');
-    })
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_13];
-    }),
-    _: 1
-    /* STABLE */
-
-  })])]), _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
-    "class": "p-button-md p-button-text p-button-secondary",
-    onClick: _cache[5] || (_cache[5] = function ($event) {
       return $setup.redirectTo('logout');
     })
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_16];
+      return [_hoisted_11];
     }),
     _: 1
     /* STABLE */

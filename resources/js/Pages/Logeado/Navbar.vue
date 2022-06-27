@@ -1,8 +1,7 @@
 <template>
     <header>
         <nav
-            class="flex flex-wrap items-center justify-between w-full py-4 md:py-0 px-4 text-lg text-gray-700 bg-white"
-        >
+            class="flex flex-wrap items-center justify-between w-full py-4 md:py-0 px-4 text-lg text-gray-700 bg-white">
             <div>
                 <a @click="redirectTo('home')">
                     <!-- Trash bo -->
@@ -12,48 +11,26 @@
                     </p>
                 </a>
             </div>
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                id="menu-button"
-                @click="menuOptions.show = !menuOptions.show"
-                class="h-6 w-6 cursor-pointer md:hidden block"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                />
+            <svg xmlns="http://www.w3.org/2000/svg" id="menu-button" @click="menuOptions.show = !menuOptions.show"
+                class="h-6 w-6 cursor-pointer md:hidden block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
 
-            <div
-                :class="
-                    'w-full md:flex md:items-center md:w-auto' +
-                    (menuOptions.show ? ' hidden' : '')
-                "
-                id="menu"
-            >
-                <ul
-                    class="pt-4 text-base text-gray-700 md:flex md:justify-between md:pt-0"
-                >
+            <div :class="
+                'w-full md:flex md:items-center md:w-auto' +
+                (menuOptions.show ? ' hidden' : '')
+            " id="menu">
+                <ul class="pt-4 text-base text-gray-700 md:flex md:justify-between md:pt-0">
                     <li v-if="usuario.id_rol == 1">
                         <a class="md:p-4 block">
-                            <SplitButton
-                                :model="urlsAdmin"
-                                class="p-button-md p-button-text p-button-secondary"
-                            >
+                            <SplitButton :model="urlsAdmin" class="p-button-md p-button-text p-button-secondary">
                                 <Button @click="redirectTo('dashboard-adm')">
-                                    <a class="text-gray-700 hover:text-red-400"
-                                        >Admin</a
-                                    >
+                                    <a class="text-gray-700 hover:text-red-400">Admin</a>
                                 </Button>
                             </SplitButton>
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a class="md:p-4 py-2 block"
                             ><Button
                                 class="p-button-md p-button-text p-button-secondary"
@@ -77,18 +54,12 @@
                             </Button></a
                         >
                     </li>
-                    <li></li>
+                    <li></li> -->
                     <li>
-                        <a class="md:p-4 py-2 block"
-                            ><Button
-                                class="p-button-md p-button-text p-button-secondary"
-                                @click="redirectTo('logout')"
-                            >
-                                <a class="text-red-700 hover:text-red-400"
-                                    >Cerrar sesión</a
-                                >
-                            </Button></a
-                        >
+                        <a class="md:p-4 py-2 block"><Button class="p-button-md p-button-text p-button-secondary"
+                                @click="redirectTo('logout')">
+                                <a class="text-red-700 hover:text-red-400">Cerrar sesión</a>
+                            </Button></a>
                     </li>
                 </ul>
             </div>

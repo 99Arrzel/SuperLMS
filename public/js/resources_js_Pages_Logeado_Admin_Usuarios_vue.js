@@ -736,30 +736,6 @@ var _hoisted_10 = {
 };
 
 var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "text-gray-700 hover:text-red-400"
-}, "Enlaces", -1
-/* HOISTED */
-);
-
-var _hoisted_12 = {
-  "class": "md:p-4 py-2 block"
-};
-
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "text-gray-700 hover:text-red-400"
-}, "Aulas", -1
-/* HOISTED */
-);
-
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, null, -1
-/* HOISTED */
-);
-
-var _hoisted_15 = {
-  "class": "md:p-4 py-2 block"
-};
-
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   "class": "text-red-700 hover:text-red-400"
 }, "Cerrar sesión", -1
 /* HOISTED */
@@ -812,38 +788,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["model"])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
+  , ["model"])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li>\n                        <a class=\"md:p-4 py-2 block\"\n                            ><Button\n                                class=\"p-button-md p-button-text p-button-secondary\"\n                                @click=\"redirectTo('enlaces')\"\n                            >\n                                <a class=\"text-gray-700 hover:text-red-400\"\n                                    >Enlaces</a\n                                >\n                            </Button></a\n                        >\n                    </li>\n                    <li>\n                        <a class=\"md:p-4 py-2 block\"\n                            ><Button\n                                class=\"p-button-md p-button-text p-button-secondary\"\n                                @click=\"redirectTo('aulas')\"\n                            >\n                                <a class=\"text-gray-700 hover:text-red-400\"\n                                    >Aulas</a\n                                >\n                            </Button></a\n                        >\n                    </li>\n                    <li></li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
     "class": "p-button-md p-button-text p-button-secondary",
     onClick: _cache[3] || (_cache[3] = function ($event) {
-      return $setup.redirectTo('enlaces');
-    })
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_11];
-    }),
-    _: 1
-    /* STABLE */
-
-  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
-    "class": "p-button-md p-button-text p-button-secondary",
-    onClick: _cache[4] || (_cache[4] = function ($event) {
-      return $setup.redirectTo('aulas');
-    })
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_13];
-    }),
-    _: 1
-    /* STABLE */
-
-  })])]), _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
-    "class": "p-button-md p-button-text p-button-secondary",
-    onClick: _cache[5] || (_cache[5] = function ($event) {
       return $setup.redirectTo('logout');
     })
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_16];
+      return [_hoisted_11];
     }),
     _: 1
     /* STABLE */

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('entregas', function (Blueprint $table) {
             $table->id('id_entrega');
-            $table->text('descripcion')->nullable();
+            $table->mediumText('descripcion')->nullable();
             $table->foreignId('id_usuario')->constrained('usuarios', 'id_usuario');
             $table->decimal('nota')->nullable();
             $table->text('comentario')->nullable();

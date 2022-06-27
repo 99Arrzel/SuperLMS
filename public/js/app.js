@@ -11,13 +11,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
 /* harmony import */ var primevue_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! primevue/config */ "./node_modules/primevue/config/config.esm.js");
+/* harmony import */ var _inertiajs_progress__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/progress */ "./node_modules/@inertiajs/progress/dist/index.js");
 
 
 
-/*
-CSS Primevue
-*/
 
+_inertiajs_progress__WEBPACK_IMPORTED_MODULE_3__.InertiaProgress.init();
+var language = {
+  locale: {
+    startsWith: "Empieza con",
+    contains: "Tiene",
+    notContains: "No tiene",
+    endsWith: "Termina en",
+    equals: "Es igual a",
+    notEquals: "No es igual a",
+    noFilter: "No filtrar",
+    lt: "Menos que",
+    lte: "Menos que o igual a",
+    gt: "Más grande que",
+    gte: "Más grande que o igual que",
+    dateIs: "Fecha es",
+    dateIsNot: "Fecha no es",
+    dateBefore: "Fecha es antes",
+    dateAfter: "Fecha es después",
+    clear: "Limpiar",
+    apply: "Aplicar",
+    matchAll: "Coincidir todo",
+    matchAny: "Coincidir cualquiera",
+    addRule: "Agregar regla",
+    removeRule: "Eliminar regla",
+    accept: "Sí",
+    reject: "No",
+    choose: "Escoger",
+    upload: "Cargar",
+    cancel: "Cancelar",
+    dayNames: ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado"],
+    dayNamesShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
+    dayNamesMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+    monthNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+    monthNamesShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+    today: "Hoy",
+    weekHeader: "Semana",
+    firstDayOfWeek: 0,
+    dateFormat: "dd/mm/yy",
+    weak: "Debil",
+    medium: "Medio",
+    strong: "Fuerte",
+    passwordPrompt: "Ingresa una contraseña",
+    emptyFilterMessage: "Sin resultados",
+    emptyMessage: "Sin opciones disponibles"
+  }
+};
 (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.createInertiaApp)({
   resolve: function resolve(name) {
     return __webpack_require__("./resources/js/Pages lazy recursive ^\\.\\/.*$")("./".concat(name));
@@ -31,7 +75,7 @@ CSS Primevue
       render: function render() {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.h)(App, props);
       }
-    }).use(plugin).component("router-link", _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Link).use(primevue_config__WEBPACK_IMPORTED_MODULE_2__["default"]).mount(el);
+    }).use(plugin).component("router-link", _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Link).use(primevue_config__WEBPACK_IMPORTED_MODULE_2__["default"], language).mount(el);
   }
 });
 
@@ -116,6 +160,16 @@ var map = {
 		"./resources/js/Pages/Logeado/Contenido.vue",
 		"/js/vendor",
 		"resources_js_Pages_Logeado_Contenido_vue"
+	],
+	"./Logeado/Contenido/Foro": [
+		"./resources/js/Pages/Logeado/Contenido/Foro.vue",
+		"/js/vendor",
+		"resources_js_Pages_Logeado_Contenido_Foro_vue"
+	],
+	"./Logeado/Contenido/Foro.vue": [
+		"./resources/js/Pages/Logeado/Contenido/Foro.vue",
+		"/js/vendor",
+		"resources_js_Pages_Logeado_Contenido_Foro_vue"
 	],
 	"./Logeado/Home": [
 		"./resources/js/Pages/Logeado/Home.vue",
