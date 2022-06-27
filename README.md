@@ -1,6 +1,7 @@
 ## ¿Qué es SuperLMS?
 ¿Qué es esto?
 SuperLMS es un sistema LMS básico con las siguientes características:
+
 1.- Hay 3 tipos de roles, Administrador, Profesor, Alumno
 
 2.- En el sistema de tareas, la estructura es la siguiente
