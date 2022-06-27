@@ -149,4 +149,8 @@ password:admin
     
     Si usas artisan serve, el servidor se iniciará y el port será 8080 por defecto, pero podría cambiar dependiendo si usas o no ese port. Para saber más ve a:
     https://laravel.com/docs/9.x/deployment#server-requirements
+    Si quieres cambiar el nombre, es la linea 8 del archivo Navbar.vue
     
+# Otros datos
+-Este proyecto cuenta con 3502 lineas de javascript/vue y 1226(Controladores) + 471(Modelos) + 651(Migraciones) + 95(Rutas) para un total de 5945 lineas de código escritas.
+
