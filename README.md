@@ -87,60 +87,38 @@ La instalación es sencilla, solo contempla los siguientes requisitos:
 
 2.- Ingresar a la carpeta y crear un nuevo archivo .ENV con los datos de tus bases de datos REDIS y MYSQL, tienes el .ENV_EXAMPLE como ejemplo pero te dejo uno acá
 
-APP_ENV=production
-APP_DEBUG=false
-APP_NAME=Lmstrucho
-APP_KEY=base64:KEYACA
-APP_URL=URLACA
-
-LOG_CHANNEL=stack
-LOG_DEPRECATIONS_CHANNEL=null
-LOG_LEVEL=debug
-
-DB_CONNECTION=mysql
-DB_HOST=IP_MYSQL_ACA
-DB_PORT=PORT_MYSQL_ACA
-DB_DATABASE=NOMBRE_DATABASE_ACA
-DB_USERNAME=USUARIO_DATABASE_ACA
-DB_PASSWORD=PASSWORD_DATABASE_ACA
-
-BROADCAST_DRIVER=log
-CACHE_DRIVER=redis
-FILESYSTEM_DISK=local
-QUEUE_CONNECTION=sync
-SESSION_DRIVER=redis
-SESSION_LIFETIME=120
-
-MEMCACHED_HOST=127.0.0.1
-
-REDIS_HOST=REDIS_IP_ACA
-REDIS_PASSWORD=PASSREDISACA
-REDIS_PORT=PORTREDISACA
-REDIS_CLIENT=predis
-
-MAIL_MAILER=smtp
-MAIL_HOST=mailhog
-MAIL_PORT=1025
-MAIL_USERNAME=null
-MAIL_PASSWORD=null
-MAIL_ENCRYPTION=null
-MAIL_FROM_ADDRESS="hello@example.com"
-MAIL_FROM_NAME="${APP_NAME}"
-
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-AWS_DEFAULT_REGION=us-east-1
-AWS_BUCKET=
-AWS_USE_PATH_STYLE_ENDPOINT=false
-
-PUSHER_APP_ID=
-PUSHER_APP_KEY=
-PUSHER_APP_SECRET=
-PUSHER_APP_CLUSTER=mt1
-
-MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
-MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
-
+    APP_ENV=production
+    APP_DEBUG=false
+    APP_NAME=Lmstrucho
+    APP_KEY=base64:KEYACA
+    APP_URL=URLACA
+    
+    LOG_CHANNEL=stack
+    LOG_DEPRECATIONS_CHANNEL=null
+    LOG_LEVEL=debug
+    
+    DB_CONNECTION=mysql
+    DB_HOST=IP_MYSQL_ACA
+    DB_PORT=PORT_MYSQL_ACA
+    DB_DATABASE=NOMBRE_DATABASE_ACA
+    DB_USERNAME=USUARIO_DATABASE_ACA
+    DB_PASSWORD=PASSWORD_DATABASE_ACA
+    
+    BROADCAST_DRIVER=log
+    CACHE_DRIVER=redis
+    FILESYSTEM_DISK=local
+    QUEUE_CONNECTION=sync
+    SESSION_DRIVER=redis
+    SESSION_LIFETIME=120
+    
+    MEMCACHED_HOST=127.0.0.1
+    
+    REDIS_HOST=REDIS_IP_ACA
+    REDIS_PASSWORD=PASSREDISACA
+    REDIS_PORT=PORTREDISACA
+    REDIS_CLIENT=predis
+    
+    
 -Lo siguiente es, dentro del directorio, correr el comando "php artisan migrate" para crear la base de datos con las migraciones establecidas
 
 ![image](https://user-images.githubusercontent.com/64380067/175929212-e1a5e96f-1268-4ba6-a2c8-66a95228ef7c.png)
@@ -157,7 +135,8 @@ password:admin
 
 ![image](https://user-images.githubusercontent.com/64380067/175930455-0f4393aa-6724-4f98-8cf3-b5f3bfbdd3a4.png)
 
-[^note]:
+    Nota:
+    
     Si usas artisan serve, el servidor se iniciará y el port será 8080 por defecto, pero podría cambiar dependiendo si usas o no ese port. Para saber más ve a:
     https://laravel.com/docs/9.x/deployment#server-requirements
     
