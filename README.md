@@ -5,7 +5,8 @@ SuperLMS es un sistema LMS básico con las siguientes características:
 1.- Hay 3 tipos de roles, Administrador, Profesor, Alumno
 
 2.- En el sistema de tareas, la estructura es la siguiente
-    -Crear un aula
+
+   -Crear un aula
     
    ![image](https://user-images.githubusercontent.com/64380067/175926482-54edaa5d-9c38-4055-934c-6a858aa7137f.png) 
     
@@ -50,28 +51,42 @@ SuperLMS es un sistema LMS básico con las siguientes características:
 
 
 4.- El sistema crea aulas con las siguientes características 
+
 -Nombre
+
 -Descripción
+
 -Una imagen
+
 -Cuando empieza
+
 -Cuando acaba
+
 -Extensión del aula
+
 -Estado
 
 ![image](https://user-images.githubusercontent.com/64380067/175926322-8a5c7855-ed1d-4653-ad5c-555ffcf475b8.png)
 
 ## Cómo instalar
 La instalación es sencilla, solo contempla los siguientes requisitos: 
+
 -PHP 8.1 o superior
+
 -Mysql
+
 -Git
+
 -Redis
+
 # Pasos de instalación
+
 1.- Debes clonar este repositorio con git clone
 
 ![image](https://user-images.githubusercontent.com/64380067/175927343-9f296deb-dde1-4d3a-bc22-8b7120103194.png)
 
 2.- Ingresar a la carpeta y crear un nuevo archivo .ENV con los datos de tus bases de datos REDIS y MYSQL, tienes el .ENV_EXAMPLE como ejemplo pero te dejo uno acá
+
 APP_ENV=production
 APP_DEBUG=false
 APP_NAME=Lmstrucho
@@ -130,9 +145,19 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 ![image](https://user-images.githubusercontent.com/64380067/175929212-e1a5e96f-1268-4ba6-a2c8-66a95228ef7c.png)
 
+-Finalmente ocupas compilar todas las dependencias de Vue, para ello usa npm install && npm run production, dentro del directorio, esto instalará y compilará las dependencias.
+
+![image](https://user-images.githubusercontent.com/64380067/175931256-06f38e87-eac7-478d-879f-424bff73e993.png)
+
+
 -Finalmente, si no estás implementando un servidor HTTP como Apache, podes simplemente usar el comando "php artisan serve" y este iniciará el sistema.
 Listo, ya tienes tu SuperLMS, las credenciales de ingreso son:
 usuario:admin
 password:admin
 
 ![image](https://user-images.githubusercontent.com/64380067/175930455-0f4393aa-6724-4f98-8cf3-b5f3bfbdd3a4.png)
+
+[^note]:
+    Si usas artisan serve, el servidor se iniciará y el port será 8080 por defecto, pero podría cambiar dependiendo si usas o no ese port. Para saber más ve a:
+    https://laravel.com/docs/9.x/deployment#server-requirements
+    
