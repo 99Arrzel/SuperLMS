@@ -68,6 +68,16 @@ SuperLMS es un sistema LMS básico con las siguientes características:
 
 ![image](https://user-images.githubusercontent.com/64380067/175926322-8a5c7855-ed1d-4653-ad5c-555ffcf475b8.png)
 
+-5.- Features no esenciales como lightmode
+
+![image](https://user-images.githubusercontent.com/64380067/175970001-10267b2a-ccbd-4ecf-b927-08caba616d84.png)
+
+ Y Darkmode
+
+![image](https://user-images.githubusercontent.com/64380067/175970074-3e1d854d-91ee-4db4-b42a-3685e314f601.png)
+
+
+
 ## Cómo instalar
 La instalación es sencilla, solo contempla los siguientes requisitos: 
 
@@ -139,4 +149,8 @@ password:admin
     
     Si usas artisan serve, el servidor se iniciará y el port será 8080 por defecto, pero podría cambiar dependiendo si usas o no ese port. Para saber más ve a:
     https://laravel.com/docs/9.x/deployment#server-requirements
+    Si quieres cambiar el nombre, es la linea 8 del archivo Navbar.vue
     
+# Otros datos
+-Este proyecto cuenta con 3502 lineas de javascript/vue y 1226(Controladores) + 471(Modelos) + 651(Migraciones) + 95(Rutas) para un total de 5945 lineas de código escritas.
+
