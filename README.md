@@ -133,3 +133,5 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 Listo, ya tienes tu SuperLMS, las credenciales de ingreso son:
 usuario:admin
 password:admin
+
+![image](https://user-images.githubusercontent.com/64380067/175930455-0f4393aa-6724-4f98-8cf3-b5f3bfbdd3a4.png)
