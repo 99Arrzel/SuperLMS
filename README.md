@@ -1,64 +1,142 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## ¿Qué es SuperLMS?
+¿Qué es esto?
+SuperLMS es un sistema LMS básico con las siguientes características:
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+1.- Hay 3 tipos de roles, Administrador, Profesor, Alumno
 
-## About Laravel
+2.- En el sistema de tareas, la estructura es la siguiente
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+   -Crear un aula
+    
+   ![image](https://user-images.githubusercontent.com/64380067/175926482-54edaa5d-9c38-4055-934c-6a858aa7137f.png) 
+    
+   -Aula puede tener muchas metas/hitos
+    
+   ![image](https://user-images.githubusercontent.com/64380067/175926538-85ccfbff-5e1d-4129-992f-2526cbc35dc0.png) 
+    
+   -Hito puede tener muchas tareas/foros
+    
+   ![image](https://user-images.githubusercontent.com/64380067/175926576-c92b4129-04f4-4c0c-856f-e3efbc12a8ab.png) 
+    
+   -Tareas pueden ser calificadas
+    
+   ![image](https://user-images.githubusercontent.com/64380067/175926658-8dd4b436-4bca-4953-823b-ed5eaa0a7c7d.png) 
+   
+   -Las tareas aceptan entregas múltiples con archivos
+    
+   ![image](https://user-images.githubusercontent.com/64380067/175926755-5a9ff125-d1d6-4381-bf32-c6a25a27b5fa.png) 
+    
+   -El docente puede subir archivos también
+    
+   ![image](https://user-images.githubusercontent.com/64380067/175926816-d1f9eb50-9fad-45b8-9808-ebbbec655576.png) 
+    
+   ![image](https://user-images.githubusercontent.com/64380067/175926856-e57fc955-cb62-4a82-8e61-6eef32c312ea.png) 
+    
+   -Los foros admiten imagenes, negreado, cursiva, tache y alineamiento de texto
+    
+   ![image](https://user-images.githubusercontent.com/64380067/175926984-b5a05de2-c7ee-4402-ada1-88085ab984fd.png) 
+    
+   -Tareas como foros expiran en la fecha y no pueden subirse más
+    
+   ![image](https://user-images.githubusercontent.com/64380067/175927073-ace8d3c8-25c1-48eb-bdfc-5cb6629ec3c7.png) 
+    
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+3.- El sistema cuenta con un registro de personas, estas personas tienen usuarios con los 3 roles mencionados
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+![image](https://user-images.githubusercontent.com/64380067/175926360-d71fecad-3547-43b2-92e6-5834edb4edff.png)
 
-## Learning Laravel
+![image](https://user-images.githubusercontent.com/64380067/175926401-9f9b3c46-6dd8-4a93-93b9-786278fe4aa0.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+![image](https://user-images.githubusercontent.com/64380067/175926414-f02fc00f-9dce-438e-896d-2a985eafce96.png)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+4.- El sistema crea aulas con las siguientes características 
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+-Nombre
 
-### Premium Partners
+-Descripción
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+-Una imagen
 
-## Contributing
+-Cuando empieza
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+-Cuando acaba
 
-## Code of Conduct
+-Extensión del aula
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+-Estado
 
-## Security Vulnerabilities
+![image](https://user-images.githubusercontent.com/64380067/175926322-8a5c7855-ed1d-4653-ad5c-555ffcf475b8.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Cómo instalar
+La instalación es sencilla, solo contempla los siguientes requisitos: 
 
-## License
+-PHP 8.1 o superior
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+-Mysql
+
+-Git
+
+-Redis
+
+# Pasos de instalación
+
+1.- Debes clonar este repositorio con git clone
+
+![image](https://user-images.githubusercontent.com/64380067/175927343-9f296deb-dde1-4d3a-bc22-8b7120103194.png)
+
+2.- Ingresar a la carpeta y crear un nuevo archivo .ENV con los datos de tus bases de datos REDIS y MYSQL, tienes el .ENV_EXAMPLE como ejemplo pero te dejo uno acá
+
+    APP_ENV=production
+    APP_DEBUG=false
+    APP_NAME=Lmstrucho
+    APP_KEY=base64:KEYACA
+    APP_URL=URLACA
+    
+    LOG_CHANNEL=stack
+    LOG_DEPRECATIONS_CHANNEL=null
+    LOG_LEVEL=debug
+    
+    DB_CONNECTION=mysql
+    DB_HOST=IP_MYSQL_ACA
+    DB_PORT=PORT_MYSQL_ACA
+    DB_DATABASE=NOMBRE_DATABASE_ACA
+    DB_USERNAME=USUARIO_DATABASE_ACA
+    DB_PASSWORD=PASSWORD_DATABASE_ACA
+    
+    BROADCAST_DRIVER=log
+    CACHE_DRIVER=redis
+    FILESYSTEM_DISK=local
+    QUEUE_CONNECTION=sync
+    SESSION_DRIVER=redis
+    SESSION_LIFETIME=120
+    
+    MEMCACHED_HOST=127.0.0.1
+    
+    REDIS_HOST=REDIS_IP_ACA
+    REDIS_PASSWORD=PASSREDISACA
+    REDIS_PORT=PORTREDISACA
+    REDIS_CLIENT=predis
+    
+    
+-Lo siguiente es, dentro del directorio, correr el comando "php artisan migrate" para crear la base de datos con las migraciones establecidas
+
+![image](https://user-images.githubusercontent.com/64380067/175929212-e1a5e96f-1268-4ba6-a2c8-66a95228ef7c.png)
+
+-Finalmente ocupas compilar todas las dependencias de Vue, para ello usa npm install && npm run production, dentro del directorio, esto instalará y compilará las dependencias.
+
+![image](https://user-images.githubusercontent.com/64380067/175931256-06f38e87-eac7-478d-879f-424bff73e993.png)
+
+
+-Finalmente, si no estás implementando un servidor HTTP como Apache, podes simplemente usar el comando "php artisan serve" y este iniciará el sistema.
+Listo, ya tienes tu SuperLMS, las credenciales de ingreso son:
+usuario:admin
+password:admin
+
+![image](https://user-images.githubusercontent.com/64380067/175930455-0f4393aa-6724-4f98-8cf3-b5f3bfbdd3a4.png)
+
+    Nota:
+    
+    Si usas artisan serve, el servidor se iniciará y el port será 8080 por defecto, pero podría cambiar dependiendo si usas o no ese port. Para saber más ve a:
+    https://laravel.com/docs/9.x/deployment#server-requirements
+    
