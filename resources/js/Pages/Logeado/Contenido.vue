@@ -1,10 +1,10 @@
 <template>
-    <sbar :usuario="usuario"> </sbar>
+
     <Dialog :breakpoints="{ '960px': '75vw', '640px': '100vw' }" :style="{ width: '50vw' }" :modal="true"
         v-model:visible="values.vertareas">
         <!-- El titulo debería variar de acuerdo a la meta -->
         <template #header>
-            <h2 class="text-center text-white text-2xl">
+            <h2 class="text-center text-variable text-2xl">
                 {{
                         values.accion_t == "Añadir"
                             ? "Añade tareas a esta meta"
@@ -44,7 +44,7 @@
         v-model:visible="values.verforos">
         <!-- El titulo debería variar de acuerdo a la meta -->
         <template #header>
-            <h2 class="text-center text-white text-2xl">
+            <h2 class="text-center text-variable text-2xl">
                 {{
                         values.accion_f == "Añadir"
                             ? "Añade foros a esta meta"
@@ -83,7 +83,7 @@
 
     <div class="flex m-4">
         <div class="px-4 mt-2 flex flex-wrap gap-2">
-            <a class="text-white text-3xl mb-2">Tareas de la meta </a>
+            <a class="text-variable text-3xl mb-2">Tareas de la meta </a>
             <a class="uppercase text-sky-400 text-3xl mb-2">{{
                     meta.plantilla.nombre
             }}</a>
@@ -142,10 +142,10 @@
         </div>
     </div>
     <div v-else>
-        <p class="text-2xl text-white text-center">"No hay tareas aún</p>
+        <p class="text-2xl text-variable text-center">"No hay tareas aún</p>
     </div>
     <div class="mx-8 mt-2">
-        <a class="text-white text-3xl mb-2">Foros de la meta </a>
+        <a class="text-variable text-3xl mb-2">Foros de la meta </a>
         <a class="uppercase text-sky-400 text-3xl mb-2">{{
                 meta.plantilla.nombre
         }}</a>
@@ -187,7 +187,7 @@
         </div>
     </div>
     <div v-else>
-        <p class="text-2xl text-white text-center">No hay foros aún</p>
+        <p class="text-2xl text-variable text-center">No hay foros aún</p>
     </div>
 </template>
 <script>
@@ -211,6 +211,7 @@ Confirm.init({
     titleMaxLength: "40",
 });
 export default {
+    layout: sbar,
     components: {
         Card,
         Calendar,

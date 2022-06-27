@@ -29,7 +29,7 @@ class Adm_Usuarios extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'usuario' => 'required|string|min:3',
+            'usuario' => 'required|string|min:3|unique:usuarios,usuario',
             'password' => 'required|string|min:3',
             'id_rol' => 'required|exists:roles,id_rol',
             'id_persona' => 'required|exists:personas,id_persona'
@@ -40,12 +40,13 @@ class Adm_Usuarios extends Controller
             'id_rol' => $request->id_rol,
             'id_persona' => $request->id_persona,
         ]);
-        return response()->json(['success' => true, 'message' => "Creado con éxito"], 200);
+        return back()->with('success', "Creado con éxito");
     }
     public function update(Request $request)
     {
         $request->validate([
-            'usuario' => 'required|string|min:3',
+            'id' => 'required|exists:usuarios,id_usuario',
+            'usuario' => 'required|string|min:3|unique:usuarios,usuario,' . $request->id . ',id_usuario',
             'id_rol' => 'required|exists:roles,id_rol',
             'id_persona' => 'required|exists:personas,id_persona'
 
@@ -60,7 +61,7 @@ class Adm_Usuarios extends Controller
 
 
         Usuarios::findOrFail($request->id)->update($data);
-        return response()->json(['success' => true, 'message' => "Actualizado con éxito"], 200);
+        return back()->with('success', "Actualizado con éxito");
     }
     public function delete(Request $request)
     {

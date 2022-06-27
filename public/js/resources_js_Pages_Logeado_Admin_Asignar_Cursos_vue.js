@@ -155,7 +155,7 @@ var _hoisted_3 = {
   "class": "mx-auto mb-2"
 };
 var _hoisted_4 = {
-  "class": "text-2xl text-white text-center"
+  "class": "text-2xl text-variable text-center"
 };
 var _hoisted_5 = {
   "class": "w-11/12 mx-auto"
@@ -171,7 +171,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_PickList = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("PickList");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "m-2 p-2 bg-blue-600 rounded-lg text-white",
+    "class": "m-2 p-2 bg-blue-600 rounded-lg text-variable",
     onClick: _cache[0] || (_cache[0] = function () {
       return $setup.go_back && $setup.go_back.apply($setup, arguments);
     })

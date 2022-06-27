@@ -1,7 +1,7 @@
 <template>
-    <sbar :usuario="usuario"> </sbar>
+
     <div class="px-4 mt-2" v-if="usuario.cursos.length > 0">
-        <p class="text-white text-3xl mb-2">Mis cursos</p>
+        <p class="text-variable text-3xl mb-2">Mis cursos</p>
         <div class="flex flex-row flex-wrap gap-4 justify-center">
             <Card v-for="curso in usuario.cursos" :key="curso.id_curso" style="width: 25em">
                 <template #header>
@@ -72,7 +72,7 @@
         </div>
     </div>
     <div v-else>
-        <p class="text-white text-3xl text-center">
+        <p class="text-variable text-3xl text-center">
             Vaya... parece que aún no te asignan cursos.
         </p>
     </div>
@@ -132,6 +132,7 @@
         </DataTable>
     </Dialog>
 
+
 </template>
 <script>
 import sbar from "./Navbar.vue";
@@ -145,6 +146,7 @@ import Column from "primevue/column";
 import InputText from "primevue/inputtext";
 import { Notify } from 'notiflix';
 export default {
+    layout: sbar,
     components: {
         InputText,
         DataTable,

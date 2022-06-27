@@ -2,14 +2,14 @@
     <div class="flex flex-col">
         <div class="mr-auto">
             <button
-                class="m-2 p-2 bg-blue-600 rounded-lg text-white"
+                class="m-2 p-2 bg-blue-600 rounded-lg text-variable"
                 @click="go_back"
             >
                 Regresar
             </button>
         </div>
         <div class="mx-auto mb-2">
-            <p class="text-2xl text-white text-center">
+            <p class="text-2xl text-variable text-center">
                 Estás asignando usuarios al aula
                 {{ curso.plantilla?.nombre }}
             </p>

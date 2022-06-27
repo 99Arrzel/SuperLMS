@@ -1,0 +1,8 @@
+@import "primevue/resources/themes/vela-blue/theme.css";
+
+body {
+    background-color: #171a21 !important;
+}
+.text-variable {
+    color: #fff !important;
+}

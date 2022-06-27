@@ -3,7 +3,7 @@
         v-model:visible="values.modalArchivos">
         <template #header>
 
-            <h2 class="text-center text-white text-2xl">
+            <h2 class="text-center text-variable text-2xl">
                 Archivos de la tarea
             </h2>
         </template>
@@ -13,10 +13,11 @@
                     :paginator="true" :rows="10">
                     <template #header>
                         <div class="flex">
-                            <button class="mx-auto disabled:bg-gray-500 bg-red-500 p-2 rounded-lg text-white" :disabled="
-                                Object.keys(values.archivo ?? {}).length ==
-                                0
-                            " @click="eliminarArchivo">
+                            <button class="mx-auto disabled:bg-gray-500 bg-red-500 p-2 rounded-lg text-variable"
+                                :disabled="
+                                    Object.keys(values.archivo ?? {}).length ==
+                                    0
+                                " @click="eliminarArchivo">
                                 Eliminar
                             </button>
                         </div>
@@ -51,14 +52,14 @@
             </TabPanel>
         </TabView>
     </Dialog>
-    <sbar :usuario="usuario"> </sbar>
+
     <div class="m-2">
-        <Link class="bg-sky-400 p-2 mr-auto rounded-lg text-white" :href="'/cursos/contenido/' + tarea.id_meta">
+        <Link class="bg-sky-400 p-2 mr-auto rounded-lg text-variable" :href="'/cursos/contenido/' + tarea.id_meta">
         Otras tareas
         </Link>
     </div>
 
-    <p class="text-white text-3xl text-center">
+    <p class="text-variable text-3xl text-center">
         Detalles de tarea {{ tarea.plantilla.nombre }}
         <button v-if="usuario.id_rol <= 2" class="p-2 bg-green-500 rounded-lg text-base"
             @click="values.modalArchivos = true">
@@ -70,7 +71,7 @@
             Descripción: {{ tarea.plantilla.descripcion }}</Fieldset>
         <TabView>
             <TabPanel header="Entregar" v-if="usuario.id_rol == 3 && evaluarFecha(tarea.plantilla.fecha_fin)">
-                <p class="text-2xl text-white mb-2">
+                <p class="text-2xl text-variable mb-2">
                     Descripción de la entrega:
                 </p>
                 <InputText v-model="values.descripcion" placeholder="Descripción de la entrega (Opcional)"
@@ -120,7 +121,7 @@
                     </ul>
                 </div>
                 <div v-else>
-                    <p class="text-white text-center">
+                    <p class="text-variable text-center">
                         No hay archivos para esta tarea
                     </p>
                 </div>
@@ -170,7 +171,7 @@
                     </DataTable>
                 </div>
                 <div v-else>
-                    <p class="text-white text-center">
+                    <p class="text-variable text-center">
                         Nadie entregó la tarea aún
                     </p>
                 </div>
@@ -198,6 +199,7 @@ import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 dayjs.extend(customParseFormat)
 export default {
+    layout: sbar,
     components: {
         Link,
         ScrollPanel,

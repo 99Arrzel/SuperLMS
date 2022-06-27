@@ -1,8 +1,8 @@
 <template>
-    <NavBar :usuario="usuario"></NavBar>
+
     <div class="flex flex-col" v-if="!valores.editando_curso">
         <div class="mx-auto m-2">
-            <p class="text-center text-5xl text-white">Tabla de cursos</p>
+            <p class="text-center text-5xl text-variable">Tabla de cursos</p>
         </div>
         <div class="w-11/12 mx-auto">
             <DataTable
@@ -24,7 +24,7 @@
                                 <i class="pi pi-search" />
                                 <input
                                     id="search"
-                                    class="p-2 text-white bg-cyan-900 rounded-lg"
+                                    class="p-2 text-variable bg-cyan-900 rounded-lg"
                                     placeholder="Buscar..."
                                     v-model="filters.global.value"
                                 />
@@ -33,7 +33,7 @@
                         <div class="flex sm:flex-row sm:ml-auto flex-col">
                             <!-- Botones para agregar, eliminar y Editar -->
                             <button
-                                class="m-1 text-base bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                                class="m-1 text-base bg-green-500 hover:bg-green-700 text-variable font-bold py-2 px-4 rounded"
                                 @click="
                                     (valores.showModal = !valores.showModal),
                                         (valores.accion = 'Agregar'),
@@ -51,7 +51,7 @@
                                         ? false
                                         : true
                                 "
-                                class="m-1 disabled:bg-gray-500 text-base bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"
+                                class="m-1 disabled:bg-gray-500 text-base bg-yellow-500 hover:bg-yellow-700 text-variable font-bold py-2 px-4 rounded"
                                 @click="
                                     (valores.showModal = !valores.showModal),
                                         (valores.accion = 'Editar'),
@@ -62,7 +62,7 @@
                             </button>
                             <button
                                 @click="delete_curso()"
-                                class="m-1 disabled:bg-gray-500 text-base bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                                class="m-1 disabled:bg-gray-500 text-base bg-red-500 hover:bg-red-700 text-variable font-bold py-2 px-4 rounded"
                                 :disabled="
                                     Object.keys(
                                         valores.curso_seleccionado ?? {}
@@ -78,7 +78,7 @@
                                     valores.editando_curso =
                                         !valores.editando_curso
                                 "
-                                class="m-1 disabled:bg-gray-500 text-base bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                class="m-1 disabled:bg-gray-500 text-base bg-blue-500 hover:bg-blue-700 text-variable font-bold py-2 px-4 rounded"
                                 :disabled="
                                     Object.keys(
                                         valores.curso_seleccionado ?? {}
@@ -259,7 +259,7 @@
             <div class="flex justify-start mt-2">
                 <button
                     type="button"
-                    class="text-white bg-blue-900 py-2 px-1 text-xl rounded-lg mx-auto"
+                    class="text-variable bg-blue-900 py-2 px-1 text-xl rounded-lg mx-auto"
                     @click="file.click()"
                 >
                     <input
@@ -273,7 +273,7 @@
                 </button>
                 <!-- <button
                     type="button"
-                    class="ml-2 text-white bg-green-900 py-2 px-1 text-xl rounded-lg disabled:bg-gray-600"
+                    class="ml-2 text-variable bg-green-900 py-2 px-1 text-xl rounded-lg disabled:bg-gray-600"
                     @click="cropImage"
                     :disabled="imagen.src == ''"
                 >
@@ -314,6 +314,7 @@ import { Cropper } from "vue-advanced-cropper";
 
 import "vue-advanced-cropper/dist/style.css";
 export default {
+    layout: NavBar,
     props: {
         usuario: {
             type: Object,

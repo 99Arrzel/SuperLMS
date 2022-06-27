@@ -1,7 +1,7 @@
 <template>
-    <sbar :usuario="props.usuario"> </sbar>
+
     <div class="m-2">
-        <Link class="bg-sky-400 p-2 mr-auto rounded-lg text-white" :href="'/cursos/contenido/' + props.foro.id_meta">
+        <Link class="bg-sky-400 p-2 mr-auto rounded-lg text-variable" :href="'/cursos/contenido/' + props.foro.id_meta">
         Otras tareas
         </Link>
     </div>
@@ -27,14 +27,20 @@
                 <button class="bg-green-500 p-2 rounded-lg mx-2" @click="enviar">
                     Crear
                 </button>
-                <Editor v-model="data.descripcion" placeholder="Escribe tu opinión" class="text-white">
+                <Editor v-model="data.descripcion" placeholder="Escribe tu opinión" class="text-variable">
                 </Editor>
             </div>
         </Panel>
     </div>
 </template>
-<script setup>
+<script>
 import sbar from "../Navbar.vue";
+export default {
+    layout: sbar,
+}
+</script>
+<script setup>
+
 import Editor from 'primevue/editor';
 import Divider from 'primevue/divider';
 import Panel from 'primevue/panel';
@@ -46,7 +52,8 @@ import { Inertia } from "@inertiajs/inertia";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import { Link } from '@inertiajs/inertia-vue3';
-dayjs.extend(customParseFormat)
+dayjs.extend(customParseFormat);
+
 const props = defineProps({
     usuario: {
         type: Object,

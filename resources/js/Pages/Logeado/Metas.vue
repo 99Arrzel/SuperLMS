@@ -1,103 +1,67 @@
 <template>
-    <sbar :usuario="usuario"> </sbar>
+
     <Sidebar v-model:visible="values.visibleFull" :baseZIndex="10000">
         <!-- El titulo debería variar de acuerdo a la meta -->
-        <h2 class="text-center text-white text-2xl">
+        <h2 class="text-center text-variable text-2xl">
             {{
-                values.accion == "Añadir"
-                    ? "Añade metas a este curso"
-                    : "Estás editando una meta"
+                    values.accion == "Añadir"
+                        ? "Añade metas a este curso"
+                        : "Estás editando una meta"
             }}
         </h2>
         <form @submit.prevent="submit">
             <div class="flex flex-col justify-center gap-2">
-                <p class="text-white">Nombre de la meta*</p>
-                <InputText
-                    v-model="values.nombre"
-                    placeholder="Nombre"
-                ></InputText>
-                <p class="text-white">Descripción de la meta*</p>
-                <InputText
-                    v-model="values.descripcion"
-                    placeholder="Descripción"
-                ></InputText>
-                <p class="text-white">Fecha de inicio*</p>
-                <Calendar
-                    dateFormat="dd/mm/yy"
-                    v-model="values.fecha_inicio"
-                    placeholder="Fecha de inicio"
-                ></Calendar>
-                <p class="text-white">Fecha final*</p>
-                <Calendar
-                    dateFormat="dd/mm/yy"
-                    v-model="values.fecha_fin"
-                    placeholder="Fecha final"
-                ></Calendar>
-                <button
-                    class="p-2 rounded-lg"
-                    :class="
-                        values.accion == 'Añadir'
-                            ? 'bg-green-500'
-                            : 'bg-yellow-500'
-                    "
-                    type="submit"
-                >
+                <p class="text-variable">Nombre de la meta*</p>
+                <InputText v-model="values.nombre" placeholder="Nombre"></InputText>
+                <p class="text-variable">Descripción de la meta*</p>
+                <InputText v-model="values.descripcion" placeholder="Descripción"></InputText>
+                <p class="text-variable">Fecha de inicio*</p>
+                <Calendar dateFormat="dd/mm/yy" v-model="values.fecha_inicio" placeholder="Fecha de inicio"></Calendar>
+                <p class="text-variable">Fecha final*</p>
+                <Calendar dateFormat="dd/mm/yy" v-model="values.fecha_fin" placeholder="Fecha final"></Calendar>
+                <button class="p-2 rounded-lg" :class="
+                    values.accion == 'Añadir'
+                        ? 'bg-green-500'
+                        : 'bg-yellow-500'
+                " type="submit">
                     {{ values.accion + " meta" }}
                 </button>
             </div>
         </form>
     </Sidebar>
     <div class="px-4 mt-2 flex flex-wrap gap-2">
-        <a class="text-white text-3xl mb-2">Metas del curso </a>
+        <a class="text-variable text-3xl mb-2">Metas del curso </a>
         <a class="uppercase text-sky-400 text-3xl mb-2">{{
-            " " + curso.plantilla.nombre
+                " " + curso.plantilla.nombre
         }}</a>
-        <Button
-            v-if="usuario.rol.id_rol <= 2"
-            icon="pi pi-th-large"
-            @click="
-                (values.visibleFull = true),
-                    (values.accion = 'Añadir'),
-                    (values.nombre = ''),
-                    (values.descripcion = ''),
-                    (values.fecha_inicio = ''),
-                    (values.fecha_fin = '')
-            "
-            v-tooltip="'Añade metas'"
-        />
+        <Button v-if="usuario.rol.id_rol <= 2" icon="pi pi-th-large" @click="
+            (values.visibleFull = true),
+            (values.accion = 'Añadir'),
+            (values.nombre = ''),
+            (values.descripcion = ''),
+            (values.fecha_inicio = ''),
+            (values.fecha_fin = '')
+        " v-tooltip="'Añade metas'" />
     </div>
 
     <div class="px-4 mt-2" v-if="curso.metas.length > 0">
         <div class="m-4">
             <div class="flex flex-row flex-wrap gap-4 justify-center">
-                <Card
-                    v-for="meta in curso.metas"
-                    :key="meta.id_meta"
-                    style="width: 25em"
-                >
+                <Card v-for="meta in curso.metas" :key="meta.id_meta" style="width: 25em">
                     <template #title>
                         <div class="flex">
                             {{ meta.plantilla.nombre }} -
                             {{
-                                meta.plantilla.fecha_inicio +
-                                " | " +
-                                meta.plantilla.fecha_fin
+                                    meta.plantilla.fecha_inicio +
+                                    " | " +
+                                    meta.plantilla.fecha_fin
                             }}
                         </div>
-                        <div
-                            v-if="usuario.rol.id_rol <= 2"
-                            class="flex flex-wrap gap-2 text-base justify-end"
-                        >
-                            <button
-                                class="bg-yellow-500 rounded-lg p-2"
-                                @click="editarMeta(meta)"
-                            >
+                        <div v-if="usuario.rol.id_rol <= 2" class="flex flex-wrap gap-2 text-base justify-end">
+                            <button class="bg-yellow-500 rounded-lg p-2" @click="editarMeta(meta)">
                                 Editar
                             </button>
-                            <button
-                                class="bg-red-500 rounded-lg p-2"
-                                @click="deleteMeta(meta)"
-                            >
+                            <button class="bg-red-500 rounded-lg p-2" @click="deleteMeta(meta)">
                                 Eliminar
                             </button>
                         </div>
@@ -108,10 +72,7 @@
                         </p>
                     </template>
                     <template #footer>
-                        <button
-                            class="w-full bg-green-500 rounded-lg p-2"
-                            @click="verMeta(meta.id_meta)"
-                        >
+                        <button class="w-full bg-green-500 rounded-lg p-2" @click="verMeta(meta.id_meta)">
                             Ver tareas y foros
                         </button>
                     </template>
@@ -120,7 +81,7 @@
         </div>
     </div>
     <div v-else>
-        <p class="text-center text-white text-3xl mb-2">Aún no hay metas</p>
+        <p class="text-center text-variable text-3xl mb-2">Aún no hay metas</p>
     </div>
 </template>
 <script>
@@ -141,6 +102,7 @@ Notify.init({
     clickToClose: true,
 });
 export default {
+    layout: sbar,
     directives: {
         Tooltip,
     },

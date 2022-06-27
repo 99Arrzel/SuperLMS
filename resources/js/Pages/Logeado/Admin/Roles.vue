@@ -1,46 +1,33 @@
 <template>
-    <NavBar :usuario="usuario"></NavBar>
-    <p class="text-5xl text-white text-center">Roles de usuario</p>
+
+    <p class="text-5xl text-variable text-center">Roles de usuario</p>
     <div class="flex md:flex-row flex-col m-2">
         <div class="sm:basis-6/12">
-            <DataTable
-                :value="roles"
-                :paginator="true"
-                selectionMode="single"
-                :rows="10"
-                :scrollable="true"
-                v-model:filters="filters"
-                v-model:selection="valores.rol_seleccionado"
-                editMode="cell"
-                @cell-edit-complete="onCellEditComplete"
-            >
+            <DataTable :value="roles" :paginator="true" selectionMode="single" :rows="10" :scrollable="true"
+                v-model:filters="filters" v-model:selection="valores.rol_seleccionado" editMode="cell"
+                @cell-edit-complete="onCellEditComplete">
                 <template #empty>
-                    <p class="text-white">Añade roles!</p>
+                    <p class="text-variable">Añade roles!</p>
                 </template>
                 <template #header>
                     <div class="flex md:flex-row flex-col">
                         <div class="mr-auto">
                             <span class="p-input-icon-right">
                                 <i class="pi pi-search" />
-                                <InputText
-                                    id="search"
-                                    v-model="filters.global.value"
-                                />
+                                <InputText id="search" v-model="filters.global.value" />
                             </span>
                         </div>
                         <div class="flex sm:flex-row sm:ml-auto flex-col">
                             <!-- Botones para agregar, eliminar y Editar -->
 
-                            <button
-                                @click="delete_p()"
-                                class="m-1 disabled:bg-gray-500 text-base bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                            <button @click="delete_p()"
+                                class="m-1 disabled:bg-gray-500 text-base bg-red-500 hover:bg-red-700 text-variable font-bold py-2 px-4 rounded"
                                 :disabled="
                                     Object.keys(valores.rol_seleccionado ?? {})
                                         .length > 0
                                         ? false
                                         : true
-                                "
-                            >
+                                ">
                                 Eliminar
                             </button>
                         </div>
@@ -58,18 +45,13 @@
 
         <div class="sm:basis-6/12 flex flex-col">
             <div class="mx-auto">
-                <p class="text-center text-white text-3xl">Añade roles</p>
+                <p class="text-center text-variable text-3xl">Añade roles</p>
             </div>
             <div class="mx-auto m-4">
                 <div class="w-full flex flex-row">
-                    <input
-                        class="w-5/5 py-2 text-center rounded-tl-lg rounded-bl-lg"
-                        v-model="form_r.nombre"
-                    />
-                    <button
-                        @click="crearNuevo()"
-                        class="disabled:bg-gray-500 text-base bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-tr-lg rounded-br-lg"
-                    >
+                    <input class="w-5/5 py-2 text-center rounded-tl-lg rounded-bl-lg" v-model="form_r.nombre" />
+                    <button @click="crearNuevo()"
+                        class="disabled:bg-gray-500 text-base bg-green-500 hover:bg-green-700 text-variable font-bold py-2 px-4 rounded-tr-lg rounded-br-lg">
                         Crear
                     </button>
                 </div>
@@ -93,6 +75,7 @@ import axios from "axios";
 import { reactive } from "vue";
 
 export default {
+    layout: NavBar,
     props: {
         usuario: {
             type: Object,

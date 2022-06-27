@@ -170,6 +170,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  layout: _Navbar_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
   props: {
     usuario: {
       type: Object,
@@ -459,11 +460,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var primevue_resources_themes_vela_blue_theme_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! primevue/resources/themes/vela-blue/theme.css */ "./node_modules/primevue/resources/themes/vela-blue/theme.css");
 /* harmony import */ var primevue_resources_primevue_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! primevue/resources/primevue.css */ "./node_modules/primevue/resources/primevue.css");
 /* harmony import */ var primeicons_primeicons_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! primeicons/primeicons.css */ "./node_modules/primeicons/primeicons.css");
-/* harmony import */ var _vue_reactivity__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @vue/reactivity */ "./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js");
+/* harmony import */ var _vue_reactivity__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @vue/reactivity */ "./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 /* harmony import */ var primevue_splitbutton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! primevue/splitbutton */ "./node_modules/primevue/splitbutton/splitbutton.esm.js");
 /* harmony import */ var primevue_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! primevue/button */ "./node_modules/primevue/button/button.esm.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var primevue_inputswitch__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! primevue/inputswitch */ "./node_modules/primevue/inputswitch/inputswitch.esm.js");
+/* harmony import */ var primevue_tooltip__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! primevue/tooltip */ "./node_modules/primevue/tooltip/tooltip.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* No va pa atras */
 history.pushState(null, document.title, location.href);
 window.addEventListener("popstate", function () {
@@ -479,7 +482,12 @@ window.addEventListener("popstate", function () {
 
 
 
+
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  directives: {
+    Tooltip: primevue_tooltip__WEBPACK_IMPORTED_MODULE_7__["default"]
+  },
   props: {
     usuario: {
       type: Object,
@@ -487,11 +495,12 @@ window.addEventListener("popstate", function () {
     }
   },
   components: {
+    InputSwitch: primevue_inputswitch__WEBPACK_IMPORTED_MODULE_6__["default"],
     SplitButton: primevue_splitbutton__WEBPACK_IMPORTED_MODULE_4__["default"],
     Button: primevue_button__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
   setup: function setup() {
-    var urlsAdmin = (0,vue__WEBPACK_IMPORTED_MODULE_6__.ref)([{
+    var urlsAdmin = (0,vue__WEBPACK_IMPORTED_MODULE_8__.ref)([{
       label: "Personas",
       command: function command() {
         _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia.visit(route("dashboard_adm_personas"));
@@ -517,7 +526,7 @@ window.addEventListener("popstate", function () {
         _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia.visit(route("dashboard_adm_notas_usuarios"));
       }
     }]);
-    var menuOptions = (0,_vue_reactivity__WEBPACK_IMPORTED_MODULE_7__.reactive)({
+    var menuOptions = (0,_vue_reactivity__WEBPACK_IMPORTED_MODULE_9__.reactive)({
       show: true
     });
 
@@ -525,7 +534,11 @@ window.addEventListener("popstate", function () {
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia.visit(route(url));
     };
 
+    var data = (0,_vue_reactivity__WEBPACK_IMPORTED_MODULE_9__.reactive)({
+      dark: true
+    });
     return {
+      data: data,
       menuOptions: menuOptions,
       redirectTo: redirectTo,
       urlsAdmin: urlsAdmin
@@ -557,7 +570,7 @@ var _hoisted_3 = {
   "class": "mx-auto mb-2"
 };
 var _hoisted_4 = {
-  "class": "text-2xl text-white text-center"
+  "class": "text-2xl text-variable text-center"
 };
 var _hoisted_5 = {
   "class": "w-11/12 mx-auto"
@@ -573,7 +586,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_PickList = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("PickList");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "m-2 p-2 bg-blue-600 rounded-lg text-white",
+    "class": "m-2 p-2 bg-blue-600 rounded-lg text-variable",
     onClick: _cache[0] || (_cache[0] = function () {
       return $setup.go_back && $setup.go_back.apply($setup, arguments);
     })
@@ -629,7 +642,7 @@ var _hoisted_1 = {
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "mx-auto m-2"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-center text-5xl text-white"
+  "class": "text-center text-5xl text-variable"
 }, "Tabla de cursos")], -1
 /* HOISTED */
 );
@@ -725,8 +738,6 @@ var _hoisted_27 = ["disabled"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _ref, _$setup$valores$curso4;
 
-  var _component_NavBar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("NavBar");
-
   var _component_Column = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Column");
 
   var _component_DataTable = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("DataTable");
@@ -739,11 +750,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_Dialog = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Dialog");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_NavBar, {
-    usuario: $props.usuario
-  }, null, 8
-  /* PROPS */
-  , ["usuario"]), !$setup.valores.editando_curso ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DataTable, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [!$setup.valores.editando_curso ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DataTable, {
     value: $props.cursos,
     paginator: true,
     selectionMode: "single",
@@ -766,7 +773,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
         id: "search",
-        "class": "p-2 text-white bg-cyan-900 rounded-lg",
+        "class": "p-2 text-variable bg-cyan-900 rounded-lg",
         placeholder: "Buscar...",
         "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
           return $setup.filters.global.value = $event;
@@ -774,13 +781,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 512
       /* NEED_PATCH */
       ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.filters.global.value]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Botones para agregar, eliminar y Editar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-        "class": "m-1 text-base bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded",
+        "class": "m-1 text-base bg-green-500 hover:bg-green-700 text-variable font-bold py-2 px-4 rounded",
         onClick: _cache[1] || (_cache[1] = function ($event) {
           return $setup.valores.showModal = !$setup.valores.showModal, $setup.valores.accion = 'Agregar', $setup.blank();
         })
       }, " Agregar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
         disabled: Object.keys((_$setup$valores$curso = $setup.valores.curso_seleccionado) !== null && _$setup$valores$curso !== void 0 ? _$setup$valores$curso : {}).length > 0 ? false : true,
-        "class": "m-1 disabled:bg-gray-500 text-base bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded",
+        "class": "m-1 disabled:bg-gray-500 text-base bg-yellow-500 hover:bg-yellow-700 text-variable font-bold py-2 px-4 rounded",
         onClick: _cache[2] || (_cache[2] = function ($event) {
           return $setup.valores.showModal = !$setup.valores.showModal, $setup.valores.accion = 'Editar', $setup.setEdit();
         })
@@ -790,7 +797,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         onClick: _cache[3] || (_cache[3] = function ($event) {
           return $setup.delete_curso();
         }),
-        "class": "m-1 disabled:bg-gray-500 text-base bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded",
+        "class": "m-1 disabled:bg-gray-500 text-base bg-red-500 hover:bg-red-700 text-variable font-bold py-2 px-4 rounded",
         disabled: Object.keys((_$setup$valores$curso2 = $setup.valores.curso_seleccionado) !== null && _$setup$valores$curso2 !== void 0 ? _$setup$valores$curso2 : {}).length > 0 ? false : true
       }, " Eliminar ", 8
       /* PROPS */
@@ -798,7 +805,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         onClick: _cache[4] || (_cache[4] = function ($event) {
           return $setup.valores.editando_curso = !$setup.valores.editando_curso;
         }),
-        "class": "m-1 disabled:bg-gray-500 text-base bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded",
+        "class": "m-1 disabled:bg-gray-500 text-base bg-blue-500 hover:bg-blue-700 text-variable font-bold py-2 px-4 rounded",
         disabled: Object.keys((_$setup$valores$curso3 = $setup.valores.curso_seleccionado) !== null && _$setup$valores$curso3 !== void 0 ? _$setup$valores$curso3 : {}).length > 0 ? false : true
       }, " Asignar usuarios ", 8
       /* PROPS */
@@ -1013,7 +1020,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* PROPS */
       , ["src", "default-size"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
         type: "button",
-        "class": "text-white bg-blue-900 py-2 px-1 text-xl rounded-lg mx-auto",
+        "class": "text-variable bg-blue-900 py-2 px-1 text-xl rounded-lg mx-auto",
         onClick: _cache[15] || (_cache[15] = function ($event) {
           return $setup.file.click();
         })
@@ -1027,7 +1034,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         accept: "image/*"
       }, null, 544
       /* HYDRATE_EVENTS, NEED_PATCH */
-      ), _hoisted_26]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button\n                    type=\"button\"\n                    class=\"ml-2 text-white bg-green-900 py-2 px-1 text-xl rounded-lg disabled:bg-gray-600\"\n                    @click=\"cropImage\"\n                    :disabled=\"imagen.src == ''\"\n                >\n                    Cortar imagen\n                </button> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+      ), _hoisted_26]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button\n                    type=\"button\"\n                    class=\"ml-2 text-variable bg-green-900 py-2 px-1 text-xl rounded-lg disabled:bg-gray-600\"\n                    @click=\"cropImage\"\n                    :disabled=\"imagen.src == ''\"\n                >\n                    Cortar imagen\n                </button> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
         type: "submit",
         "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["px-2 py-3 text-xl rounded-lg m-2 w-full disabled:bg-gray-400", $setup.valores.accion == 'Agregar' ? 'bg-green-600' : 'bg-yellow-600']),
         disabled: $setup.valores.id_imagen == ''
@@ -1067,7 +1074,7 @@ var _hoisted_1 = {
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "text-5xl"
-}, "ITECBO", -1
+}, "TUNOMBREAQUI", -1
 /* HOISTED */
 );
 
@@ -1102,21 +1109,29 @@ var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_10 = {
+  "class": "self-center"
+};
+var _hoisted_11 = {
   "class": "md:p-4 py-2 block"
 };
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   "class": "text-red-700 hover:text-red-400"
 }, "Cerrar sesión", -1
 /* HOISTED */
 );
 
+var _hoisted_13 = ["href"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
 
   var _component_SplitButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("SplitButton");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  var _component_InputSwitch = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("InputSwitch");
+
+  var _directive_tooltip = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDirective)("tooltip");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.redirectTo('home');
     })
@@ -1158,21 +1173,37 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["model"])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li>\n                        <a class=\"md:p-4 py-2 block\"\n                            ><Button\n                                class=\"p-button-md p-button-text p-button-secondary\"\n                                @click=\"redirectTo('enlaces')\"\n                            >\n                                <a class=\"text-gray-700 hover:text-red-400\"\n                                    >Enlaces</a\n                                >\n                            </Button></a\n                        >\n                    </li>\n                    <li>\n                        <a class=\"md:p-4 py-2 block\"\n                            ><Button\n                                class=\"p-button-md p-button-text p-button-secondary\"\n                                @click=\"redirectTo('aulas')\"\n                            >\n                                <a class=\"text-gray-700 hover:text-red-400\"\n                                    >Aulas</a\n                                >\n                            </Button></a\n                        >\n                    </li>\n                    <li></li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
+  , ["model"])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_InputSwitch, {
+    modelValue: $setup.data.dark,
+    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+      return $setup.data.dark = $event;
+    })
+  }, null, 8
+  /* PROPS */
+  , ["modelValue"]), [[_directive_tooltip, $setup.data.dark ? 'Modo light' : 'Modo dark', void 0, {
+    bottom: true
+  }]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li>\n                        <a class=\"md:p-4 py-2 block\"\n                            ><Button\n                                class=\"p-button-md p-button-text p-button-secondary\"\n                                @click=\"redirectTo('enlaces')\"\n                            >\n                                <a class=\"text-gray-700 hover:text-red-400\"\n                                    >Enlaces</a\n                                >\n                            </Button></a\n                        >\n                    </li>\n                    <li>\n                        <a class=\"md:p-4 py-2 block\"\n                            ><Button\n                                class=\"p-button-md p-button-text p-button-secondary\"\n                                @click=\"redirectTo('aulas')\"\n                            >\n                                <a class=\"text-gray-700 hover:text-red-400\"\n                                    >Aulas</a\n                                >\n                            </Button></a\n                        >\n                    </li>\n                    <li></li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
     "class": "p-button-md p-button-text p-button-secondary",
-    onClick: _cache[3] || (_cache[3] = function ($event) {
+    onClick: _cache[4] || (_cache[4] = function ($event) {
       return $setup.redirectTo('logout');
     })
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_11];
+      return [_hoisted_12];
     }),
     _: 1
     /* STABLE */
 
   })])])])], 2
   /* CLASS */
-  )])]);
+  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("link", {
+    href: $setup.data.dark ? '/css/dark.css' : '/css/light.css',
+    rel: "stylesheet"
+  }, null, 8
+  /* PROPS */
+  , _hoisted_13), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])], 64
+  /* STABLE_FRAGMENT */
+  );
 }
 
 /***/ }),

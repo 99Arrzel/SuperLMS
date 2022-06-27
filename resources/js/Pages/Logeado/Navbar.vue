@@ -5,7 +5,7 @@
             <div>
                 <a @click="redirectTo('home')">
                     <!-- Trash bo -->
-                    <p class="text-5xl">ITECBO</p>
+                    <p class="text-5xl">TUNOMBREAQUI</p>
                     <p class="text-cyan-400">
                         Bienvenido {{ usuario.persona.nombre }}
                     </p>
@@ -29,6 +29,10 @@
                                 </Button>
                             </SplitButton>
                         </a>
+                    </li>
+                    <li class="self-center">
+                        <InputSwitch v-model="data.dark" v-tooltip.bottom="data.dark ? 'Modo light' : 'Modo dark'">
+                        </InputSwitch>
                     </li>
                     <!-- <li>
                         <a class="md:p-4 py-2 block"
@@ -65,6 +69,10 @@
             </div>
         </nav>
     </header>
+    <link :href="data.dark ? '/css/dark.css' : '/css/light.css'" rel="stylesheet" />
+    <article>
+        <slot />
+    </article>
 </template>
 <script>
 /* No va pa atras */
@@ -81,8 +89,13 @@ import { reactive } from "@vue/reactivity";
 import { Inertia } from "@inertiajs/inertia";
 import SplitButton from "primevue/splitbutton";
 import Button from "primevue/button";
+import InputSwitch from 'primevue/inputswitch';
+import Tooltip from 'primevue/tooltip';
 import { onMounted, ref } from "vue";
 export default {
+    directives: {
+        Tooltip
+    },
     props: {
         usuario: {
             type: Object,
@@ -90,6 +103,7 @@ export default {
         },
     },
     components: {
+        InputSwitch,
         SplitButton,
         Button,
     },
@@ -133,8 +147,11 @@ export default {
         const redirectTo = (url) => {
             Inertia.visit(route(url));
         };
-
+        const data = reactive({
+            dark: true,
+        });
         return {
+            data,
             menuOptions,
             redirectTo,
             urlsAdmin,
