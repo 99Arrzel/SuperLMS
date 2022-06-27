@@ -133,12 +133,7 @@ export default {
                     Inertia.visit(route("dashboard_adm_cursos"));
                 },
             },
-            {
-                label: "Notas Estudiantes",
-                command: () => {
-                    Inertia.visit(route("dashboard_adm_notas_usuarios"));
-                },
-            },
+
         ]);
 
         const menuOptions = reactive({

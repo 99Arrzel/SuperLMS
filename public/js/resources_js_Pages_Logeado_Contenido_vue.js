@@ -351,11 +351,6 @@ window.addEventListener("popstate", function () {
       command: function command() {
         _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia.visit(route("dashboard_adm_cursos"));
       }
-    }, {
-      label: "Notas Estudiantes",
-      command: function command() {
-        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia.visit(route("dashboard_adm_notas_usuarios"));
-      }
     }]);
     var menuOptions = (0,_vue_reactivity__WEBPACK_IMPORTED_MODULE_9__.reactive)({
       show: true
