@@ -85,29 +85,33 @@
                 </FileUpload>
             </TabPanel>
             <TabPanel header="Entregas previas" v-if="usuario.id_rol == 3">
-                <Fieldset v-for="entrega in usuario.entregas" :key="entrega.id_entrega"
-                    :legend="'Fecha: ' + entrega.created_at" class="mb-4">
-                    <p>
-                        Descripción:
-                        {{
-                                entrega.descripcion == null
-                                    ? "Sin descripción"
-                                    : entrega.descripcion
-                        }}
-                    </p>
-                    <p>Nota: <a :class="entrega.nota > 50 ? 'bg-green-500' : 'bg-red-500'"
-                            class="px-1.5 rounded-lg">{{ entrega.nota == null ? "Sin calificar aún" : entrega.nota }}</a>
-                    </p>
-                    <p>Comentario: {{ entrega.comentario == null ? "Sin comentario" : entrega.comentario }}</p>
-                    <p>Archivos:</p>
-                    <ul>
-                        <li v-for="archivo in entrega.archivos" :key="archivo.id_archivo">
-                            <a :href="archivo.url" target="_blank" class="text-blue-500">
-                                {{ archivo.nombre }}
-                            </a>
-                        </li>
-                    </ul>
-                </Fieldset>
+                <!-- Quick fix de lo que sería filtrar por la tarea -->
+                <div v-for="entrega in usuario.entregas" :key="entrega.id_entrega">
+                    <Fieldset :legend="'Fecha: ' + entrega.created_at" class="mb-4" v-if="entrega.tarea.length > 0">
+
+                        <p>
+                            Descripción:
+                            {{
+                                    entrega.descripcion == null
+                                        ? "Sin descripción"
+                                        : entrega.descripcion
+                            }}
+                        </p>
+                        <p>Nota: <a :class="entrega.nota > 50 ? 'bg-green-500' : 'bg-red-500'"
+                                class="px-1.5 rounded-lg">{{ entrega.nota == null ? "Sin calificar aún" : entrega.nota }}</a>
+                        </p>
+                        <p>Comentario: {{ entrega.comentario == null ? "Sin comentario" : entrega.comentario }}</p>
+                        <p>Archivos:</p>
+                        <ul>
+                            <li v-for="archivo in entrega.archivos" :key="archivo.id_archivo">
+                                <a :href="archivo.url" target="_blank" class="text-blue-500">
+                                    {{ archivo.nombre }}
+                                </a>
+                            </li>
+                        </ul>
+
+                    </Fieldset>
+                </div>
             </TabPanel>
             <TabPanel header="Archivos de la tarea">
                 <div v-if="tarea.plantilla.archivos.length > 0">

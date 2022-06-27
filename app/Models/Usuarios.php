@@ -14,8 +14,8 @@ class Usuarios extends Authenticatable
     use HasFactory, SoftDeletes;
     protected $table = 'usuarios';
     protected $primaryKey  = 'id_usuario';
-    protected $fillable = ['usuario', 'id_rol', 'password', 'id_persona'];
-    protected $hidden = ['password'];
+    protected $fillable = ['usuario', 'id_rol', 'password', 'id_persona', 'remember_token'];
+    protected $hidden = ['password', 'remember_token'];
     //Casts dates to dd/mm/yyyy hh:mm:ss
     protected function serializeDate(DateTimeInterface $date)
     {
