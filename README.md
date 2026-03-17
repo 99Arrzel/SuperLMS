@@ -1,156 +1,158 @@
-## ¿Qué es SuperLMS?
-¿Qué es esto?
-SuperLMS es un sistema LMS básico con las siguientes características:
+# SuperLMS
 
-1.- Hay 3 tipos de roles, Administrador, Profesor, Alumno
+A full-featured Learning Management System built with **Laravel**, **Vue.js**, **MySQL**, and **Redis**.
 
-2.- En el sistema de tareas, la estructura es la siguiente
+SuperLMS provides a straightforward yet capable platform for managing classrooms, assignments, forums, and grading -- supporting three distinct user roles out of the box.
 
-   -Crear un aula
-    
-   ![image](https://user-images.githubusercontent.com/64380067/175926482-54edaa5d-9c38-4055-934c-6a858aa7137f.png) 
-    
-   -Aula puede tener muchas metas/hitos
-    
-   ![image](https://user-images.githubusercontent.com/64380067/175926538-85ccfbff-5e1d-4129-992f-2526cbc35dc0.png) 
-    
-   -Hito puede tener muchas tareas/foros
-    
-   ![image](https://user-images.githubusercontent.com/64380067/175926576-c92b4129-04f4-4c0c-856f-e3efbc12a8ab.png) 
-    
-   -Tareas pueden ser calificadas
-    
-   ![image](https://user-images.githubusercontent.com/64380067/175926658-8dd4b436-4bca-4953-823b-ed5eaa0a7c7d.png) 
-   
-   -Las tareas aceptan entregas múltiples con archivos
-    
-   ![image](https://user-images.githubusercontent.com/64380067/175926755-5a9ff125-d1d6-4381-bf32-c6a25a27b5fa.png) 
-    
-   -El docente puede subir archivos también
-    
-   ![image](https://user-images.githubusercontent.com/64380067/175926816-d1f9eb50-9fad-45b8-9808-ebbbec655576.png) 
-    
-   ![image](https://user-images.githubusercontent.com/64380067/175926856-e57fc955-cb62-4a82-8e61-6eef32c312ea.png) 
-    
-   -Los foros admiten imagenes, negreado, cursiva, tache y alineamiento de texto
-    
-   ![image](https://user-images.githubusercontent.com/64380067/175926984-b5a05de2-c7ee-4402-ada1-88085ab984fd.png) 
-    
-   -Tareas como foros expiran en la fecha y no pueden subirse más
-    
-   ![image](https://user-images.githubusercontent.com/64380067/175927073-ace8d3c8-25c1-48eb-bdfc-5cb6629ec3c7.png) 
-    
+---
 
-3.- El sistema cuenta con un registro de personas, estas personas tienen usuarios con los 3 roles mencionados
+## Features
 
-![image](https://user-images.githubusercontent.com/64380067/175926360-d71fecad-3547-43b2-92e6-5834edb4edff.png)
+### User Roles
 
-![image](https://user-images.githubusercontent.com/64380067/175926401-9f9b3c46-6dd8-4a93-93b9-786278fe4aa0.png)
+Three built-in roles with scoped permissions:
 
-![image](https://user-images.githubusercontent.com/64380067/175926414-f02fc00f-9dce-438e-896d-2a985eafce96.png)
+- **Administrator** -- Full system access and user management
+- **Teacher** -- Classroom creation, assignment grading, and file uploads
+- **Student** -- Assignment submissions, forum participation, and grade viewing
 
+### Classroom Management
 
-4.- El sistema crea aulas con las siguientes características 
+Each classroom includes:
 
--Nombre
+| Property | Description |
+|---|---|
+| Name | Classroom title |
+| Description | Summary of the course |
+| Image | Cover image for the classroom |
+| Start Date | When the classroom opens |
+| End Date | When the classroom closes |
+| Extension | Optional deadline extension |
+| Status | Active / inactive state |
 
--Descripción
+### Assignments & Grading
 
--Una imagen
+- Classrooms contain **milestones** (goals/checkpoints)
+- Milestones contain **assignments** and **forums**
+- Assignments support **grading** and **multiple submissions with file attachments**
+- Teachers can upload files to assignments as well
+- All assignments and forums **expire on their due date** -- no late submissions
 
--Cuando empieza
+### Forums
 
--Cuando acaba
+- Rich-text support: **bold**, *italic*, ~~strikethrough~~, and text alignment
+- Inline image embedding
 
--Extensión del aula
+### UI
 
--Estado
+- Light mode and Dark mode
 
-![image](https://user-images.githubusercontent.com/64380067/175926322-8a5c7855-ed1d-4653-ad5c-555ffcf475b8.png)
+---
 
--5.- Features no esenciales como lightmode
+## Installation
 
-![image](https://user-images.githubusercontent.com/64380067/175970001-10267b2a-ccbd-4ecf-b927-08caba616d84.png)
+### Prerequisites
 
- Y Darkmode
+- **PHP** 8.1 or higher
+- **MySQL**
+- **Redis**
+- **Git**
+- **Node.js / npm**
 
-![image](https://user-images.githubusercontent.com/64380067/175970074-3e1d854d-91ee-4db4-b42a-3685e314f601.png)
+### Steps
 
+1. **Clone the repository**
 
+   ```bash
+   git clone https://github.com/99Arrzel/SuperLMS.git
+   cd SuperLMS
+   ```
 
-## Cómo instalar
-La instalación es sencilla, solo contempla los siguientes requisitos: 
+2. **Create your environment file**
 
--PHP 8.1 o superior
+   Copy the example and fill in your database and Redis credentials:
 
--Mysql
+   ```bash
+   cp .env.example .env
+   ```
 
--Git
+   A minimal `.env` looks like this:
 
--Redis
+   ```env
+   APP_ENV=production
+   APP_DEBUG=false
+   APP_NAME=SuperLMS
+   APP_KEY=base64:YOUR_APP_KEY_HERE
+   APP_URL=http://localhost:8080
 
-# Pasos de instalación
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=superlms
+   DB_USERNAME=root
+   DB_PASSWORD=your_password
 
-1.- Debes clonar este repositorio con git clone
+   REDIS_HOST=127.0.0.1
+   REDIS_PASSWORD=null
+   REDIS_PORT=6379
+   ```
 
-![image](https://user-images.githubusercontent.com/64380067/175927343-9f296deb-dde1-4d3a-bc22-8b7120103194.png)
+   Generate an application key:
 
-2.- Ingresar a la carpeta y crear un nuevo archivo .ENV con los datos de tus bases de datos REDIS y MYSQL, tienes el .ENV_EXAMPLE como ejemplo pero te dejo uno acá
+   ```bash
+   php artisan key:generate
+   ```
 
-    APP_ENV=production
-    APP_DEBUG=false
-    APP_NAME=Lmstrucho
-    APP_KEY=base64:KEYACA
-    APP_URL=URLACA
-    
-    LOG_CHANNEL=stack
-    LOG_DEPRECATIONS_CHANNEL=null
-    LOG_LEVEL=debug
-    
-    DB_CONNECTION=mysql
-    DB_HOST=IP_MYSQL_ACA
-    DB_PORT=PORT_MYSQL_ACA
-    DB_DATABASE=NOMBRE_DATABASE_ACA
-    DB_USERNAME=USUARIO_DATABASE_ACA
-    DB_PASSWORD=PASSWORD_DATABASE_ACA
-    
-    BROADCAST_DRIVER=log
-    CACHE_DRIVER=redis
-    FILESYSTEM_DISK=local
-    QUEUE_CONNECTION=sync
-    SESSION_DRIVER=redis
-    SESSION_LIFETIME=120
-    
-    MEMCACHED_HOST=127.0.0.1
-    
-    REDIS_HOST=REDIS_IP_ACA
-    REDIS_PASSWORD=PASSREDISACA
-    REDIS_PORT=PORTREDISACA
-    REDIS_CLIENT=predis
-    
-    
--Lo siguiente es, dentro del directorio, correr el comando "php artisan migrate" para crear la base de datos con las migraciones establecidas
+3. **Run database migrations**
 
-![image](https://user-images.githubusercontent.com/64380067/175929212-e1a5e96f-1268-4ba6-a2c8-66a95228ef7c.png)
+   ```bash
+   php artisan migrate
+   ```
 
--Finalmente ocupas compilar todas las dependencias de Vue, para ello usa npm install && npm run production, dentro del directorio, esto instalará y compilará las dependencias.
+4. **Install and compile front-end assets**
 
-![image](https://user-images.githubusercontent.com/64380067/175931256-06f38e87-eac7-478d-879f-424bff73e993.png)
+   ```bash
+   npm install && npm run production
+   ```
 
+5. **Start the application**
 
--Finalmente, si no estás implementando un servidor HTTP como Apache, podes simplemente usar el comando "php artisan serve" y este iniciará el sistema.
-Listo, ya tienes tu SuperLMS, las credenciales de ingreso son:
-usuario:admin
-password:admin
+   If you are not using a dedicated HTTP server (e.g., Apache or Nginx):
 
-![image](https://user-images.githubusercontent.com/64380067/175930455-0f4393aa-6724-4f98-8cf3-b5f3bfbdd3a4.png)
+   ```bash
+   php artisan serve
+   ```
 
-    Nota:
-    
-    Si usas artisan serve, el servidor se iniciará y el port será 8080 por defecto, pero podría cambiar dependiendo si usas o no ese port. Para saber más ve a:
-    https://laravel.com/docs/9.x/deployment#server-requirements
-    Si quieres cambiar el nombre, es la linea 8 del archivo Navbar.vue
-    
-# Otros datos
--Este proyecto cuenta con 3502 lineas de javascript/vue y 1226(Controladores) + 471(Modelos) + 651(Migraciones) + 95(Rutas) para un total de 5945 lineas de código escritas.
+   The app will be available at `http://localhost:8080` by default. The port may vary if 8080 is already in use.
 
+---
+
+## Default Credentials
+
+| Username | Password |
+|---|---|
+| `admin` | `admin` |
+
+> **Note:** Change these immediately in any non-local environment.
+
+---
+
+## Codebase Stats
+
+| Layer | Lines of Code |
+|---|---|
+| JavaScript / Vue | 3,502 |
+| Controllers | 1,226 |
+| Models | 471 |
+| Migrations | 651 |
+| Routes | 95 |
+| **Total** | **~5,945** |
+
+---
+
+## Tech Stack
+
+- **Back-end:** Laravel (PHP 8.1+)
+- **Front-end:** Vue.js
+- **Database:** MySQL
+- **Cache / Queues:** Redis
